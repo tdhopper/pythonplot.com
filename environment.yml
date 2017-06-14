@@ -1,0 +1,13 @@
+name: ggplot_vs_python_viz
+channels:
+- conda-forge
+dependencies:
+- pip
+- python=3
+- bokeh
+- anaconda
+- seaborn
+- altair
+- pip:
+  - rpy2
+  - jinja2-highlight
