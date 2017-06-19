@@ -62,9 +62,9 @@
                 {% for plot in items %}
                   <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ slug }}{{ plot['package-slug'] }}" role="tabpanel">
                     {% if plot['package'] == "ggplot" %}
-                      <code>{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
+                      <code class="p-0">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
                     {% else %}
-                      <code>{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
+                      <code class="p-0">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
                     {% endif %}
                   <img src="data:image/png;base64,{{ plot['image'] }}" class="img-fluid">
                   </div>
