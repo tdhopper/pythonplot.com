@@ -15,7 +15,7 @@
     <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/pygments-github.css" rel="stylesheet">
+    <link href="css/pygments-native.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
 
@@ -71,18 +71,16 @@
         </ul>
       </div>
 
-      <div class="card-block">
+      <div class="card-block p-0">
         <div class="tab-content">
           {% for plot in foo %}
             <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ plot[1] }}" role="tabpanel">
-              <pre><code>
-                {% if plot[1] == "ggplot" %}
-                  {% highlight 'R' %}{{ plot[2] }}{% endhighlight %}
-                {% else %}
-                  {% highlight 'python' %}{{ plot[2] }}{% endhighlight %}
-                {% endif %}
-              </code></pre>
-            <img src="data:image/png;base64,{{ plot[3] }}">
+              {% if plot[1] == "ggplot" %}
+                <code>{% highlight 'R' %}{{ plot[2] }}{% endhighlight %}</code>
+              {% else %}
+                <code>{% highlight 'python' %}{{ plot[2] }}{% endhighlight %}</code>
+              {% endif %}
+            <img src="data:image/png;base64,{{ plot[3] }}" class="img-fluid">
             </div>
           {% endfor %}
         </div>
