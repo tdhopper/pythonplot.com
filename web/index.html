@@ -50,6 +50,16 @@ mind than any other device." — John Tukey</p>
 </blockquote>
 <p>Plotting is an essential component of data analysis. As a data scientist,
 I spend a significant.</p>
+<ul>
+<li><a href="https://matplotlib.org/" title="Matplotlib: Python plotting">Matplotlib</a>: "Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms."</li>
+<li><a href="https://plotnine.readthedocs.io/en/stable/" title="plotnine: A grammar of graphics for Python">plotnine</a>: "plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2."</li>
+<li><a href="https://seaborn.pydata.org/" title="Seaborn: statistical data visualization">seaborn</a>: "Seaborn is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics."</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/visualization.html" title="pandas documentation">Pandas plots</a>: "basics to easily create decent looking plots" from data frames using on Matplotlib under the hood.</li>
+<li><a href="https://github.com/yhat/ggpy" title="ggplot port for python">ggpy</a>: A "ggplot port for Python" that isn't under active development.</li>
+<li><a href="https://altair-viz.github.io/" title="Declarative Visualization in Python">Altair</a>: "Altair is a declarative statistical visualization library for Python, based on Vega-Lite."</li>
+<li><a href="http://bokeh.pydata.org/en/latest/" title="Python interactive visualization library">Bokeh</a>: "Bokeh is a Python interactive visualization library that targets modern web browsers for presentation."</li>
+</ul>
+<p>I remain a big fan of Hadley Wickham's <a href="http://ggplot2.org/" title="ggplot2">ggplot2</a>, a "<a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448" title="The Grammar of Graphics (Statistics and Computing): Leland Wilkinson, D. Wills, D. Rope, A. Norton, R. Dubbs: 9780387245447: Amazon.com: Books">grammar of graphics</a>" implementation in R.</p>
       </div>
       </div>
 
@@ -527,8 +537,7 @@ I spend a significant.</p>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
                           
-                            <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="p">(</span><span class="n">mpg</span>
+                            <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span><span class="n">mpg</span>
     <span class="o">.</span><span class="n">plot</span>
     <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters vs Highway MPG&#39;</span><span class="p">)</span>
@@ -606,7 +615,8 @@ I spend a significant.</p>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
                           
                             <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">mpg</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]))</span> <span class="o">+</span> 
-  <span class="n">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;hwy&quot;</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;hwy&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
   <span class="n">facet_wrap</span><span class="p">(</span><span class="s2">&quot; ~ c&quot;</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>  <span class="o">+</span>
   <span class="n">theme</span><span class="p">(</span><span class="n">figure_size</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
 </pre></div>
@@ -705,7 +715,8 @@ I spend a significant.</p>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
                           
                             <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span> <span class="o">+</span> 
-  <span class="n">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;hwy&quot;</span><span class="p">))</span> <span class="o">+</span> 
+  <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;hwy&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> 
   <span class="n">facet_grid</span><span class="p">(</span><span class="s2">&quot;drv ~ cyl&quot;</span><span class="p">)</span> <span class="o">+</span>
     <span class="n">theme</span><span class="p">(</span><span class="n">figure_size</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
 </pre></div>
@@ -752,7 +763,8 @@ I spend a significant.</p>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
                           
                             <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">mpg</span><span class="p">)</span> <span class="o">+</span> 
-  <span class="n">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">displ</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span> 
+  <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">displ</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">hwy</span><span class="p">)</span> <span class="o">+</span>
+  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span> 
   <span class="n">facet_grid</span><span class="p">(</span><span class="n">drv</span> <span class="o">~</span> <span class="n">cyl</span><span class="p">)</span>
 </pre></div>
 </code>
@@ -769,8 +781,16 @@ I spend a significant.</p>
         
 
       </div></div>
-    </div>
 
+      <div class="row">
+         <div class="col-5">© 2017 <a href="http://tdhopper.com">Tim Hopper</a></div>
+         <div class="col-5">© 2017 <a href="https://github.com/tdhopper/ggplot_vs_python_vis">
+           Generated from an IPython Notebook on Github
+         </a></div>
+
+         <div class="col-2"><p class="float-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

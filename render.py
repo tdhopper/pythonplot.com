@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# encoding=utf8
+
 import json
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
