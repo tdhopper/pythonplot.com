@@ -74,13 +74,16 @@
                           </a>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
+                          <h6 class="text-muted mb-0 pb-0 pt-3 px-3">Code:</h6>
                           {% if plot['package'] == "ggplot" %}
                             <code class="p-0 mb-auto">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
                           {% else %}
                             <code class="p-0 mb-auto">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
                           {% endif %}
                           {% if plot['comment'] %}
-                          <div class="text-muted comment pt-3 px-3">{{ plot['comment'] }}</div>
+                          <div class="comment pt-3 px-3">
+                          <h6 class="text-muted">Note:</h6>
+                          {{ plot['comment'] }}</div>
                           {% endif %}
                         </div>
                       </div>

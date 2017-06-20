@@ -6,20 +6,25 @@ from jinja2 import Environment, FileSystemLoader
 from collections import defaultdict
 import re
 import markdown
+import logging
 
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 md = markdown.Markdown(extensions=['meta'])
 
 packages = {
-    "ggplot": "ggplot2 (R)",
     "pandas": "Pandas",
     "matplotlib": "Matplotlib",
+    "seaborn": "Seaborn",
     "plotnine": "plotnine",
+    "ggplot": "ggplot2 (R)",
 }
 
 names = {
     "bar-counts": "Basic Bar Chart",
     "simple-histogram": "Basic Histogram",
     "scatter-plot": "Basic Scatter Plot",
+    "line-plot": "Basic Line Plot",
     "scatter-plot-with-colors": "Scatter Plot with Colored Points by Category",
     "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
     "scatter-plot-with-facets": "Scatter Plot Faceted on Two Variables",
@@ -31,12 +36,17 @@ with open("INTRO.md", "r") as f:
 
 
 def image_from_cell(cell):
-    return cell['outputs'][0]['data']['image/png'].replace("\n", "").strip()
+    try:
+        return cell['outputs'][0]['data']['image/png'].replace("\n", "").strip()
+    except KeyError as e:
+        logging.error("Can't find image in cell: %s", cell['source'])
+        raise e
 
 
 def source_from_cell(cell):
     source = "".join(cell['source']).strip()
     source = source.replace(";", "")
+    source = source.replace('"', "'")
     if "%%R" in source:
         source = '\n'.join(source.split('\n')[1:])
     if source.startswith('"""') or source.startswith("'''"):
@@ -49,6 +59,16 @@ def tags_from_cell(cell):
     tags = set(cell['metadata'].get('tags') or {})
     if "ex" in tags:
         return {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
+
+
+def reorder_meta(meta):
+    def order_plots(plots):
+        if plots:
+            return sorted(plots, key=lambda k: list(packages.keys()).index(k['package-slug']))
+        else:
+            return plots
+    meta = {(name, slug): order_plots(meta[slug]) for slug, name in names.items()}
+    return meta
 
 
 def extract_cells():
@@ -64,7 +84,7 @@ def extract_cells():
         comment, source = source_from_cell(cells[cell_num])
         image = image_from_cell(cells[cell_num])
 
-        meta[(names.get(tags['name'], tags['name']), tags['name'])].append({
+        meta[tags['name']].append({
             "cell_num": cell_num,
             "package": packages.get(tags["package"], tags["package"]),
             "package-slug": tags['package'],
@@ -72,7 +92,8 @@ def extract_cells():
             "content": source,
             "comment": md.convert(comment) or None,
         })
-    meta = {k: v[::-1] for k, v in meta.items()}
+    meta = reorder_meta(meta)
+
     return meta
 
 
