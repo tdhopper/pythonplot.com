@@ -37,7 +37,9 @@ with open("INTRO.md", "r") as f:
 
 def image_from_cell(cell):
     try:
-        return cell['outputs'][0]['data']['image/png'].replace("\n", "").strip()
+        for c in cell['outputs']:
+            if 'image/png' in c['data']:
+                return c['data']['image/png'].replace("\n", "").strip()
     except KeyError as e:
         logging.error("Can't find image in cell: %s", cell['source'])
         raise e
