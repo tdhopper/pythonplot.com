@@ -36,6 +36,7 @@ def image_from_cell(cell):
 
 def source_from_cell(cell):
     source = "".join(cell['source']).strip()
+    source = source.replace(";", "")
     if "%%R" in source:
         source = '\n'.join(source.split('\n')[1:])
     if source.startswith('"""') or source.startswith("'''"):
@@ -44,18 +45,22 @@ def source_from_cell(cell):
     return "", source
 
 
+def tags_from_cell(cell):
+    tags = set(cell['metadata'].get('tags') or {})
+    if "ex" in tags:
+        return {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
+
+
 def extract_cells():
     with open("./ggplot vs Python Plotting.ipynb", 'r') as f:
         nb = json.load(f)
     cells = nb['cells']
-    tags = {i: set(c['metadata'].get('tags') or {}) for i, c in enumerate(cells)}
+    tags = {i: tags_from_cell(c) for i, c in enumerate(cells)}
 
     meta = defaultdict(list)
     for cell_num, tags in tags.items():
-        if 'ex' not in tags:
+        if tags is None:
             continue
-        tags = {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
-
         comment, source = source_from_cell(cells[cell_num])
         image = image_from_cell(cells[cell_num])
 
