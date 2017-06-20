@@ -7,12 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Python Plotting for Exploratory Analysis</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/pygments-native.css" rel="stylesheet">
@@ -25,12 +26,15 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Python Plotting for Exploratory Analysis</a>
+      <a class="navbar-brand" href="#">Python Plotting for EDA</a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="http://www.tdhopper.com">tdhopper.com</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.twitter.com/tdhopper">@tdhopper</a>
           </li>
         </ul>
 
@@ -38,15 +42,16 @@
     </nav>
 
     <div class="container">
-      <div class="row"><div class="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h1>Python Plotting for Exploratory Analysis</h1>
-      </div></div>
+      <div class="row"><div class="col-xs-12 col-lg-6 col-md-8 offset-md-1 offset-lg-2">
+        {{ intro }}
+      </div>
+      </div>
 
-      <div class="row"><div class="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <div class="row"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
           <div class="card mb-4">
             <div class="card-header">
-              <h2 class="card-title">{{ name }}</h2>
+              <h3 class="card-title mb-1">{{ name }}</h3>
               <ul class="nav nav-tabs card-header-tabs">
                 {% for plot in items %}
                 <li class="nav-item">
@@ -61,15 +66,25 @@
               <div class="tab-content">
                 {% for plot in items %}
                   <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ slug }}{{ plot['package-slug'] }}" role="tabpanel">
-                    {% if plot['package'] == "ggplot" %}
-                      <code class="p-0">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
-                    {% else %}
-                      <code class="p-0">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
-                    {% endif %}
-                  <img src="data:image/png;base64,{{ plot['image'] }}" class="img-fluid">
-                  {% if plot['comment'] %}
-                  <div class="card-footer text-muted px-2">{{ plot['comment'] }}</div>
-                  {% endif %}
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-lg-6 col-xs-12 p-lg-0">
+                          <a href="data:image/png;base64,{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
+                            <img src="data:image/png;base64,{{ plot['image'] }}" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
+                          {% if plot['package'] == "ggplot" %}
+                            <code class="p-0 mb-auto">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
+                          {% else %}
+                            <code class="p-0 mb-auto">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
+                          {% endif %}
+                          {% if plot['comment'] %}
+                          <div class="text-muted comment pt-3 px-3">{{ plot['comment'] }}</div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 {% endfor %}
               </div>
@@ -88,5 +103,12 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.js"></script>
+    <script type="text/javascript">
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+          event.preventDefault();
+          $(this).ekkoLightbox({alwaysShowClose: true});
+      });
+    </script>
   </body>
 </html>

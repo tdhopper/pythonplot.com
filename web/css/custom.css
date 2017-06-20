@@ -4,6 +4,21 @@ body {
 
 .highlight pre {
     padding: 1em;
+    margin-bottom: 0px;
 }
 
 .card-footer p:last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
+
+.right-col {
+    background-color: #202020;
+}
+
+.comment {
+    background-color: #f7f7f9;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border: 0;
+}

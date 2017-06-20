@@ -23,6 +23,9 @@ names = {
     "scatter-plot-with-facet": "Scatter Plot Faceted on One Variables",
 }
 
+with open("INTRO.md", "r") as f:
+    intro = f.read()
+
 
 def image_from_cell(cell):
     return cell['outputs'][0]['data']['image/png'].replace("\n", "").strip()
@@ -72,7 +75,7 @@ if __name__ == '__main__':
 
     env = Environment(loader=FileSystemLoader('web'), extensions=['jinja2_highlight.HighlightExtension'])
     template = env.get_template('t_index.html')
-    output_from_parsed_template = template.render(foo=output, plots=plots)
+    output_from_parsed_template = template.render(intro=md.convert(intro), plots=plots)
 
 
     # to save the results
