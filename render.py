@@ -23,7 +23,7 @@ names = {
     "scatter-plot-with-colors": "Scatter Plot with Colored Points by Category",
     "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
     "scatter-plot-with-facets": "Scatter Plot Faceted on Two Variables",
-    "scatter-plot-with-facet": "Scatter Plot Faceted on One Variables",
+    "scatter-plot-with-facet": "Scatter Plot Faceted on One Variable",
 }
 
 with open("INTRO.md", "r") as f:
