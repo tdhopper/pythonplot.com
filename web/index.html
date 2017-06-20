@@ -131,7 +131,7 @@ I spend a significant amount of my time making simple plots to understand comple
  <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
  <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
  <span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of Cars by Make&#39;</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="p">)</span>
 </pre></div>
 </code>
                           
@@ -229,7 +229,7 @@ I spend a significant amount of my time making simple plots to understand comple
                           
                             <code class="p-0 mb-auto"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;cty&#39;</span><span class="p">]</span>
  <span class="o">.</span><span class="n">plot</span>
- <span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">12</span><span class="p">));</span>
+ <span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
 </pre></div>
 </code>
                           
@@ -332,7 +332,7 @@ I spend a significant amount of my time making simple plots to understand comple
     <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters vs Highway MPG&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">)</span>
 </pre></div>
 </code>
                           
@@ -439,7 +439,7 @@ I spend a significant amount of my time making simple plots to understand comple
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters vs Highway MPG&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">)</span>
 </pre></div>
 </code>
                           
@@ -542,7 +542,7 @@ I spend a significant amount of my time making simple plots to understand comple
     <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters vs Highway MPG&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Engine Displacement in Liters&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Highway MPG&#39;</span><span class="p">)</span>
 </pre></div>
 </code>
                           
@@ -642,7 +642,7 @@ I spend a significant amount of my time making simple plots to understand comple
  <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
  <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="s2">&quot;hwy&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
  <span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="p">)</span>
 </pre></div>
 </code>
                           
@@ -742,7 +742,7 @@ I spend a significant amount of my time making simple plots to understand comple
  <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;drv&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;cyl&quot;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=.</span><span class="mi">9</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
  <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s2">&quot;displ&quot;</span><span class="p">,</span> <span class="s2">&quot;hwy&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
  <span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=.</span><span class="mo">02</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=.</span><span class="mo">02</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="p">)</span>
 </pre></div>
 </code>
                           

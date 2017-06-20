@@ -6,6 +6,8 @@ mind than any other device." — John Tukey
 Plotting is an essential component of data analysis. As a data scientist,
 I spend a significant amount of my time making simple plots to understand complex data sets (exploratory data analysis) and help others understand them (presentations).
 
+Before I started using Python
+
 * [Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting"): "Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms."
 * [plotnine](https://plotnine.readthedocs.io/en/stable/ "plotnine: A grammar of graphics for Python"): "plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2."
 * [seaborn](https://seaborn.pydata.org/ "Seaborn: statistical data visualization"): "Seaborn is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics."
