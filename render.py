@@ -6,12 +6,18 @@ from jinja2 import Environment, FileSystemLoader
 packages = {
     "ggplot": "ggplot2 (R)",
     "pandas": "Pandas",
+    "matplotlib": "Matplotlib",
+    "plotnine": "plotnine",
 }
 
 names = {
     "bar-counts": "Basic Bar Chart",
     "simple-histogram": "Basic Histogram",
     "scatter-plot": "Basic Scatter Plot",
+    "scatter-plot-with-colors": "Scatter Plot with Colored Points by Category",
+    "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
+    "scatter-plot-with-facets": "Scatter Plot Faceted on Two Variables",
+    "scatter-plot-with-facet": "Scatter Plot Faceted on One Variables",
 }
 
 def get_source_and_image(num, cells):
