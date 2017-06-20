@@ -37,9 +37,11 @@ If you're interested in the breadth of plotting tools available for Python, I co
 
 ##### Humble Rosetta Stone for Visualization in Exploratory Data Analysis
 
-After years of complaining on Twitter, I have started compiling my thoughts on what we are lacking in Python. My hope is that this will (1) help you in your daily practice to work with what is available and (2) help inspire future development of Python plotting libraries.
+After years of complaining on Twitter, I have started compiling my thoughts on what we are lacking in Python. Below I have begun compiling a list of basic plots for exploratory data analysis. I have generated the plots with as many different libraries as time (and library) permits.
 
-Below I have begun compiling
+My hope is that this will (1) help you in your daily practice to work with what is available and (2) help inspire future development of Python plotting libraries.
+
+[Feedback](https://github.com/tdhopper/ggplot_vs_python_vis/issues) or other  plot suggestions are welcome.
 
 ##### Hearty Thank You
 
