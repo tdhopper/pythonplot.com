@@ -1,7 +1,10 @@
 import json
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
+import re
+import markdown
 
+md = markdown.Markdown(extensions=['meta'])
 
 packages = {
     "ggplot": "ggplot2 (R)",
@@ -20,12 +23,19 @@ names = {
     "scatter-plot-with-facet": "Scatter Plot Faceted on One Variables",
 }
 
-def get_source_and_image(num, cells):
-    image = cells[num]['outputs'][0]['data']['image/png'].replace("\n", "").strip()
-    source = "".join(cells[num]['source']).strip()
-    if "%R" in source:
+
+def image_from_cell(cell):
+    return cell['outputs'][0]['data']['image/png'].replace("\n", "").strip()
+
+
+def source_from_cell(cell):
+    source = "".join(cell['source']).strip()
+    if "%%R" in source:
         source = '\n'.join(source.split('\n')[1:])
-    return source, image
+    if source.startswith('"""') or source.startswith("'''"):
+        m = re.match("(?:[\"']{3,})((?:.|\n)*)(?:[\"']{3,})((?:.|\n)*)", source, re.MULTILINE)
+        return m.groups()
+    return "", source
 
 
 def extract_cells():
@@ -40,10 +50,8 @@ def extract_cells():
             continue
         tags = {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
 
-        source = "".join(cells[cell_num]['source']).strip()
-        if "%R" in source:
-            source = '\n'.join(source.split('\n')[1:])
-        image = cells[cell_num]['outputs'][0]['data']['image/png'].replace("\n", "").strip()
+        comment, source = source_from_cell(cells[cell_num])
+        image = image_from_cell(cells[cell_num])
 
         meta[(names.get(tags['name'], tags['name']), tags['name'])].append({
             "cell_num": cell_num,
@@ -51,6 +59,7 @@ def extract_cells():
             "package-slug": tags['package'],
             "image": image,
             "content": source,
+            "comment": md.convert(comment) or None,
         })
     meta = {k: v[::-1] for k, v in meta.items()}
     return meta

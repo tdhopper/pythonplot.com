@@ -38,11 +38,11 @@
     </nav>
 
     <div class="container">
-      <div class="row"><div class="col-xs-12 col-lg-8 offset-lg-2">
+      <div class="row"><div class="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
       <h1>Python Plotting for Exploratory Analysis</h1>
       </div></div>
 
-      <div class="row"><div class="col-xs-12 col-lg-8 offset-lg-2">
+      <div class="row"><div class="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
         {% for (name, slug), items in plots.items() %}
           <div class="card mb-4">
             <div class="card-header">
@@ -67,6 +67,9 @@
                       <code class="p-0">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
                     {% endif %}
                   <img src="data:image/png;base64,{{ plot['image'] }}" class="img-fluid">
+                  {% if plot['comment'] %}
+                  <div class="card-footer text-muted px-2">{{ plot['comment'] }}</div>
+                  {% endif %}
                   </div>
                 {% endfor %}
               </div>

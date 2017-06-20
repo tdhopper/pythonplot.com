@@ -5,3 +5,5 @@ body {
 .highlight pre {
     padding: 1em;
 }
+
+.card-footer p:last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
