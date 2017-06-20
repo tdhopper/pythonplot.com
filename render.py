@@ -2,8 +2,8 @@
 # encoding=utf8
 
 import json
-from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
+from collections import defaultdict
 import re
 import markdown
 
@@ -70,8 +70,6 @@ def extract_cells():
     meta = {k: v[::-1] for k, v in meta.items()}
     return meta
 
-
-output = defaultdict(list)
 
 if __name__ == '__main__':
     plots = extract_cells()
