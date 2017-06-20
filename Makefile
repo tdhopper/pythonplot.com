@@ -12,4 +12,7 @@ render:
 s3_upload:
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve
 
-.PHONY: all render s3_upload
+run_nb:
+	jupyter nbconvert --to notebook --execute "ggplot vs Python Plotting.ipynb"
+
+.PHONY: all render s3_upload run_nb
