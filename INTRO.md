@@ -22,7 +22,7 @@ Many excellent plotting tools are built on top of Matplotlib.
 
 [^ggpy]: There is also [ggpy](https://github.com/yhat/ggpy "ggplot port for python"), a ggplot2 port, from the company formerly known as yhat. It appears to be abandoned.
 
-"[__Altair__](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar")." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."[^jake]
+"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar")." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."[^jake]
 
 Fundamentally, Altair renders JSON-descriptions of plots that are rendered by Vega-Lite; this JSON could be rendered by other backends as well, and I'm told a Matplotlib backend is under development.
 
