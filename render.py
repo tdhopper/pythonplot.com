@@ -7,6 +7,7 @@ from collections import defaultdict
 import re
 import markdown
 import logging
+import subprocess
 
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -105,12 +106,18 @@ def extract_cells():
     return meta
 
 
+def get_git_revision_short_hash():
+    return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip().decode("utf8")
+
+
 if __name__ == '__main__':
     plots = extract_cells()
 
     env = Environment(loader=FileSystemLoader('web'), extensions=['jinja2_highlight.HighlightExtension'])
     template = env.get_template('t_index.html')
-    output_from_parsed_template = template.render(intro=md.convert(intro), plots=plots)
+    output_from_parsed_template = template.render(intro=md.convert(intro),
+                                                  plots=plots,
+                                                  git=get_git_revision_short_hash())
 
 
     # to save the results
