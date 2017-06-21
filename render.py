@@ -21,11 +21,11 @@ packages = {
 }
 
 names = {
-    "bar-counts": "Basic Bar Chart",
-    "simple-histogram": "Basic Histogram",
-    "scatter-plot": "Basic Scatter Plot",
-    "line-plot": "Basic Line Plot",
-    "scatter-plot-with-colors": "Scatter Plot with Colored Points by Category",
+    "bar-counts": "Bar Chart",
+    "simple-histogram": "Histogram",
+    "scatter-plot": "Scatter Plot",
+    "line-plot": "Line Plot",
+    "scatter-plot-with-colors": "Scatter Plot with Faceted with Color",
     "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
     "scatter-plot-with-facet": "Scatter Plot Faceted on One Variable",
     "scatter-plot-with-facets": "Scatter Plot Faceted on Two Variables",
