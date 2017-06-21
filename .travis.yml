@@ -10,6 +10,7 @@ before_install:
   - sudo add-apt-repository -y ppa:marutter/rdev
   - sudo apt-get update -y
   - sudo apt-get -y install r-base r-base-dev
+  - R --no-save < setup.R
 install: "pip install -r requirements.txt"
 script: make travis
 addons:
