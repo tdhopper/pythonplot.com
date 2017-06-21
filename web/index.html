@@ -72,8 +72,6 @@
           
             <li><a href="#scatter-plot">Scatter Plot</a></li>
           
-            <li><a href="#line-plot">Line Plot</a></li>
-          
             <li><a href="#scatter-plot-with-colors">Scatter Plot with Faceted with Color</a></li>
           
             <li><a href="#scatter-plot-with-size">Scatter Plot with Points Sized by Continuous Value</a></li>
@@ -106,7 +104,7 @@ I spend a significant amount of my time making simple plots to understand comple
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/visualization.html" title="pandas documentation">Pandas plots</a> provides the "basics to easily create decent looking plots" from data frames. It provides about 70% of what I want to do day-to-day. Importantly, it lacks robust faceting capabilities.</p>
 <p><a href="https://plotnine.readthedocs.io/en/stable/" title="plotnine: A grammar of graphics for Python">plotnine</a>: "plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2." <strong>plotnine</strong> is a recent attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.<sup id="fnref:ggpy"><a class="footnote-ref" href="#fn:ggpy" rel="footnote">1</a></sup></p>
 <p>"<a href="https://seaborn.pydata.org/" title="Seaborn: statistical data visualization">Seaborn</a> is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics." <strong>Seaborn</strong> makes beautiful plots but is geared toward specific statistical plots, not general purpose plotting. It does have a powerful <a href="http://seaborn.pydata.org/tutorial/axis_grids.html">faceting utility function</a> that I use regularly.</p>
-<p>"<a href="https://altair-viz.github.io/" title="Declarative Visualization in Python"><strong>Altair</strong></a> is a declarative statistical visualization library for Python, based on <a href="https://vega.github.io/vega-lite/" title="Vega-Lite: A High-Level Visualization Grammar">Vega-Lite</a>." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."<sup id="fnref:jake"><a class="footnote-ref" href="#fn:jake" rel="footnote">2</a></sup></p>
+<p>"<a href="https://altair-viz.github.io/" title="Declarative Visualization in Python">Altair</a> is a declarative statistical visualization library for Python, based on <a href="https://vega.github.io/vega-lite/" title="Vega-Lite: A High-Level Visualization Grammar">Vega-Lite</a>." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."<sup id="fnref:jake"><a class="footnote-ref" href="#fn:jake" rel="footnote">2</a></sup></p>
 <p>Fundamentally, Altair renders JSON-descriptions of plots that are rendered by Vega-Lite; this JSON could be rendered by other backends as well, and I'm told a Matplotlib backend is under development.</p>
 <p>Altair is new on the scene and offers a lot of promise; it will have significant changes in the 2.0 release. I hope to add Altair examples here once 2.0 is released.</p>
 <h4>Interactive Plotting Libraries</h4>
@@ -481,21 +479,6 @@ I spend a significant amount of my time making simple plots to understand comple
                       </div>
                     </div>
                   </div>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="card mb-4" id="line-plot">
-            <div class="card-header">
-              <h3 class="card-title mb-1">Line Plot</h3>
-              <ul class="nav nav-tabs card-header-tabs">
-                
-              </ul>
-            </div>
-
-            <div class="card-block p-0">
-              <div class="tab-content">
                 
               </div>
             </div>
