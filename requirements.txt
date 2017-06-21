@@ -6,3 +6,4 @@ rpy2
 plotnine
 jinja2
 jinja2-highlight
+markdown
