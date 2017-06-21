@@ -29,6 +29,7 @@ names = {
     "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
     "scatter-plot-with-facet": "Scatter Plot Faceted on One Variable",
     "scatter-plot-with-facets": "Scatter Plot Faceted on Two Variables",
+    "scatter-plot-with-regression": "Scatter Plot and Regression Line with 95% Confidence Interval Layered",
     "stacked-smooth-line-and-scatter": "Smoothed Line Plot and Scatter Plot Layered",
     "stacked-bar-chart": "Stacked Bar Chart",
     "dodged-bar-chart": "Dodged Bar Chart",
