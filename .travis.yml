@@ -15,17 +15,17 @@ install: "pip install -r requirements.txt"
 script: make travis
 addons:
   artifacts: true
-# deploy:
-#   - provider: s3
-#     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
-#     secret_access_key: $AWS_SECRET_KEY
-#     bucket: pythonplot.com
-#     endpoint: pythonplot.com.s3-website-us-east-1.amazonaws.com
-#     region: us-east-1
-#     skip_cleanup: true
-#     local-dir: web
-#     acl: public_read
-#     default_text_charset: 'utf-8'
-#     detect_encoding: true
-#     on:
-#       branch: master
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: pythonplot.com
+    endpoint: pythonplot.com.s3-website-us-east-1.amazonaws.com
+    region: us-east-1
+    skip_cleanup: true
+    local-dir: web
+    acl: public_read
+    default_text_charset: 'utf-8'
+    detect_encoding: true
+    on:
+      branch: master
