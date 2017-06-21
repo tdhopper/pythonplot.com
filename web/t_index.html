@@ -24,6 +24,7 @@
     <link href="css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-bottom.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/pygments-native.css" rel="stylesheet">
@@ -62,7 +63,7 @@
 
         <h3>Contents</h3>
         <ul id="outline">
-          <li><a href="#intro">Intro</a></li>
+          <li><a href="#intro">Introduction</a></li>
           <li><a href="#examples">Examples</a><ol>
           {% for (name, slug), items in plots.items() %}
             <li><a href="#{{ slug }}">{{ name }}</a></li>
@@ -73,7 +74,8 @@
       </div>
       </div>
 
-      <div class="row" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
+      <hr>
+      <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
           <div class="card mb-4" id="{{ slug }}">
             <div class="card-header">
@@ -141,11 +143,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js"></script>
     <script type="text/javascript">
       $(document).on('click', '[data-toggle="lightbox"]', function(event) {
           event.preventDefault();
           $(this).ekkoLightbox({alwaysShowClose: true});
       });
+      $.bigfoot();
     </script>
   </body>
 </html>
