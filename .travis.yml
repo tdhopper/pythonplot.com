@@ -12,6 +12,8 @@ before_install:
   - sudo apt-get -y install r-base r-base-dev
 install: "pip install -r requirements.txt"
 script: make travis
+addons:
+  artifacts: true
 # deploy:
 #   - provider: s3
 #     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
