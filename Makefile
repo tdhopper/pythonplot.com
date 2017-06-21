@@ -1,7 +1,7 @@
 
 OUTPUTDIR=web
 
-S3_BUCKET=catskill-sitcom-mew
+S3_BUCKET=pythonplot.com
 
 all: render s3_upload
 	echo "Done"
