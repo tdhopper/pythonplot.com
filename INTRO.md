@@ -60,7 +60,7 @@ Below I have begun compiling a list of basic plots for exploratory data analysis
 
 My hope is that this will (1) help you in your daily practice to work with what is available and (2) help inspire future development of Python plotting libraries.
 
-[Feedback](https://github.com/tdhopper/ggplot_vs_python_vis/issues) or other  plot suggestions are welcome.
+Some rudimentary instructions on how you can contribute plots are [here](https://github.com/tdhopper/ggplot_vs_python_vis#contributing). [General feedback or other plot suggestions](https://github.com/tdhopper/ggplot_vs_python_vis/issues) are welcome.
 
 #### Data
 
