@@ -66,6 +66,8 @@ Some rudimentary instructions on how you can contribute plots are [here](https:/
 
 The datasets used below are included with ggplot2. One is the [Prices of 50,000 round cut diamonds](http://ggplot2.tidyverse.org/reference/diamonds.html) and the other is [Fuel economy data from 1999 and 2008 for 38 popular models of car](http://ggplot2.tidyverse.org/reference/mpg.html).
 
+The time series example is a random walk I generate with a quick Python script.
+
 ### Hearty Thank You
 
 Much Python plotting development is done by open source developers who have an (almost) thankless task. I am extremely grateful for the countless hours of many who have helped me do my job. Please keep it up!

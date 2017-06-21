@@ -24,6 +24,7 @@ names = {
     "bar-counts": "Bar Chart",
     "simple-histogram": "Histogram",
     "scatter-plot": "Scatter Plot",
+    "timeseries": "Time Series",
     "scatter-plot-with-colors": "Scatter Plot with Faceted with Color",
     "scatter-plot-with-size": "Scatter Plot with Points Sized by Continuous Value",
     "scatter-plot-with-facet": "Scatter Plot Faceted on One Variable",
