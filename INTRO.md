@@ -72,5 +72,4 @@ The time series example is a random walk I generate with a quick Python script.
 
 Much Python plotting development is done by open source developers who have an (almost) thankless task. I am extremely grateful for the countless hours of many who have helped me do my job. Please keep it up!
 
-[![Build Status](https://travis-ci.org/tdhopper/pythonplot.com.svg?branch=master)](https://travis-ci.org/tdhopper/pythonplot.com)
 
