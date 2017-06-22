@@ -65,10 +65,22 @@ def source_from_cell(cell):
     return "", source
 
 
-def tags_from_cell(cell):
+def tags_from_cell(cell, type='ex'):
     tags = set(cell['metadata'].get('tags') or {})
-    if "ex" in tags:
+    if type in tags:
         return {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
+
+
+def data_from_cell(cell):
+    try:
+        for c in cell['outputs']:
+            if 'data' in c and 'text/html' in c['data']:
+                table = ' '.join(c['data']['text/html'])
+                table = table.replace('border="1" class="dataframe"', 'class="table table-sm table-striped table-responsive"')
+                return table
+    except KeyError as e:
+        logging.error("Can't find data in cell: %s", cell['source'])
+        raise e
 
 
 def reorder_meta(meta):
@@ -79,6 +91,20 @@ def reorder_meta(meta):
             return plots
     meta = {(name, slug): order_plots(meta[slug]) for slug, name in names.items()}
     return meta
+
+
+def extract_data(path):
+    with open(path, 'r') as f:
+        nb = json.load(f)
+    cells = nb['cells']
+    full_data = {}
+    tags = {i: tags_from_cell(c, type='data') for i, c in enumerate(cells)}
+    for cell_num, tags in tags.items():
+        if tags is None:
+            continue
+        data = data_from_cell(cells[cell_num])
+        full_data[tags['name']] = data
+    return full_data
 
 
 def extract_cells(path):
@@ -113,12 +139,14 @@ def get_git_revision_short_hash():
 
 if __name__ == '__main__':
     plots = extract_cells(sys.argv[1])
+    data = extract_data(sys.argv[1])
 
     env = Environment(loader=FileSystemLoader('web'), extensions=['jinja2_highlight.HighlightExtension'])
     template = env.get_template('t_index.html')
     output_from_parsed_template = template.render(intro=md.convert(intro),
                                                   plots=plots,
-                                                  git=get_git_revision_short_hash())
+                                                  git=get_git_revision_short_hash(),
+                                                  data=data)
 
 
     # to save the results

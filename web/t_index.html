@@ -84,6 +84,16 @@
       </div>
       </div>
 
+      <div class="row"><div class="col-xs-12 col-lg-8 offset-lg-2">
+        <div class="card"><div class="card-block">
+          {% for name, table in data.items() %}
+            <h5>{{ name }}</h5>
+
+            {{ table }}
+          {% endfor %}
+        </div></div>
+      </div></div>
+
       <hr>
       <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}

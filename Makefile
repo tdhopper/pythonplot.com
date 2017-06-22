@@ -6,10 +6,13 @@ S3_BUCKET=pythonplot.com
 all: render s3_upload
 	echo "Done"
 
-travis: run_nb render
+travis: render
 	echo "Done"
 
-render:
+qrender:
+	python render.py "Examples.ipynb"
+
+render: run_nb
 	python render.py "Examples.$(GIT_COMMIT).ipynb"
 
 s3_upload:
