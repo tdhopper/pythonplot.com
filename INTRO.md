@@ -8,7 +8,7 @@ In particular, I make a lot of bar charts (including histograms), line plots (in
 
 Python plotting libraries are manifold. Most well known is Matplotlib.
 
-"[Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting") is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms." Native Matplotlib is the cause of [frustration](https://stackoverflow.com/questions/tagged/matplotlib) to many data analysts to the complex syntax. Much of that frustration would be alleviated if it were recognized as a library of lower level plotting primitives on which other tools can be built.
+"[Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting") is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms." Native Matplotlib is the cause of [frustration](https://stackoverflow.com/questions/tagged/matplotlib) to many data analysts due to the complex syntax. Much of that frustration would be alleviated if it were recognized as a library of lower level plotting primitives on which other tools can be built.
 
 #### Matplotlib-Based Libraries
 
