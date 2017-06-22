@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 # encoding=utf8
 
+import sys
 import json
 from jinja2 import Environment, FileSystemLoader
 from collections import defaultdict
@@ -80,8 +81,8 @@ def reorder_meta(meta):
     return meta
 
 
-def extract_cells():
-    with open("./ggplot vs Python Plotting.ipynb", 'r') as f:
+def extract_cells(path):
+    with open(path, 'r') as f:
         nb = json.load(f)
     cells = nb['cells']
     tags = {i: tags_from_cell(c) for i, c in enumerate(cells)}
@@ -111,7 +112,7 @@ def get_git_revision_short_hash():
 
 
 if __name__ == '__main__':
-    plots = extract_cells()
+    plots = extract_cells(sys.argv[1])
 
     env = Environment(loader=FileSystemLoader('web'), extensions=['jinja2_highlight.HighlightExtension'])
     template = env.get_template('t_index.html')
