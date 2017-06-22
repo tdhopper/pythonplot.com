@@ -47,7 +47,7 @@ Available at [pythonplot.com](http://pythonplot.com/)
 
 ### Contributing
 
-The site is generated from plots in the `ggplot vs Python Plotting.ipynb` Python 3, Jupyter notebook.
+The site is generated from plots in the `Examples.ipynb` Python 3, Jupyter notebook.
 
 Each plot is tagged with metadata using Jupyter cell tags. You can view the cell tags in your notebook with `View > Cell Toolbar > Tags`.
 

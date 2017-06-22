@@ -32,7 +32,7 @@ Altair is new on the scene and offers a lot of promise; it will have significant
 
 #### Interactive Plotting Libraries
 
-There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/ggplot_vs_python_vis).
+There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/pythonplot.com).
 
 "[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation."
 
@@ -60,7 +60,7 @@ Below I have begun compiling a list of basic plots for exploratory data analysis
 
 My hope is that this will (1) help you in your daily practice to work with what is available and (2) help inspire future development of Python plotting libraries.
 
-Some rudimentary instructions on how you can contribute plots are [here](https://github.com/tdhopper/ggplot_vs_python_vis#contributing). [General feedback or other plot suggestions](https://github.com/tdhopper/ggplot_vs_python_vis/issues) are welcome.
+Some rudimentary instructions on how you can contribute plots are [here](https://github.com/tdhopper/pythonplot.com#contributing). [General feedback or other plot suggestions](https://github.com/tdhopper/pythonplot.com/issues) are welcome.
 
 #### Data
 

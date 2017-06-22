@@ -10,12 +10,12 @@ travis: run_nb render
 	echo "Done"
 
 render:
-	python render.py "ggplot vs Python Plotting.$(GIT_COMMIT).ipynb"
+	python render.py "Examples.$(GIT_COMMIT).ipynb"
 
 s3_upload:
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve
 
 run_nb:
-	jupyter nbconvert --to notebook --execute "ggplot vs Python Plotting.ipynb" --output "ggplot vs Python Plotting.$(GIT_COMMIT).ipynb"
+	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
 .PHONY: all render s3_upload run_nb travis
