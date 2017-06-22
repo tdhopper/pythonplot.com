@@ -16,7 +16,7 @@ Many excellent plotting tools are built on top of Matplotlib.
 
 [Pandas plots](https://pandas.pydata.org/pandas-docs/stable/visualization.html "pandas documentation") provides the "basics to easily create decent looking plots" from data frames. It provides about 70% of what I want to do day-to-day. Importantly, it lacks robust faceting capabilities.
 
-"[plotnine](https://plotnine.readthedocs.io/en/stable/") is an implementation of a grammar of graphics in Python, it is based on ggplot2." plotnine is a recent attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.[^ggpy]
+"[plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of graphics in Python, it is based on ggplot2." plotnine is a recent attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.[^ggpy]
 
 "[Seaborn](https://seaborn.pydata.org/ "Seaborn: statistical data visualization") is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics." Seaborn makes beautiful plots but is geared toward specific statistical plots, not general purpose plotting. It does have a powerful [faceting utility function](http://seaborn.pydata.org/tutorial/axis_grids.html) that I use regularly.
 
