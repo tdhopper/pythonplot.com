@@ -4,6 +4,7 @@ python:
 notifications:
   email: false
 before_install:
+  -
   - sudo apt-get update
   # We do this conditionally because it saves us some downloading if the
   # version is the same.
@@ -18,6 +19,8 @@ before_install:
   - conda install r-essentials pip
 install: "pip install -r requirements.txt"
 script: make travis
+after_script:
+  - echo "Rendered notebook: http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/ggplot%20vs%20Python%20Plotting.$(shell git log -1 --pretty=format:"%h").ipynb"
 addons:
   artifacts: true
 deploy:
