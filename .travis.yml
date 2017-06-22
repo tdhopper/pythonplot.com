@@ -20,7 +20,7 @@ before_install:
 install: "pip install -r requirements.txt"
 script: make travis
 after_script:
-  - echo "Rendered notebook: http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/ggplot%20vs%20Python%20Plotting.$(git log -1 --pretty=format:'%h').ipynb"
+  - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/ggplot%20vs%20Python%20Plotting.$(git log -1 --pretty=format:'%h').ipynb"
 addons:
   artifacts: true
 deploy:
