@@ -131,8 +131,8 @@
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-lg-6 col-xs-12 p-lg-0">
-                          <a href="data:image/png;base64,{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
-                            <img src="data:image/png;base64,{{ plot['image'] }}" class="img-fluid">
+                          <a href="{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
+                            <img src="{{ plot['image'] }}" class="img-fluid">
                           </a>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">

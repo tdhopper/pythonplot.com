@@ -9,6 +9,8 @@ import re
 import markdown
 import logging
 import subprocess
+import base64
+import hashlib
 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -46,7 +48,14 @@ def image_from_cell(cell):
     try:
         for c in cell['outputs']:
             if 'data' in c and 'image/png' in c['data']:
-                return c['data']['image/png'].replace("\n", "").strip()
+                base64_img = c['data']['image/png'].replace("\n", "").strip()
+                filename = hashlib.md5()
+                filename.update(base64_img.encode('ascii'))
+                web_path = "/img/plots/{}.png".format(filename.hexdigest())
+                full_path = "web" + web_path
+                with open(full_path, "wb") as fh:
+                    fh.write(base64.b64decode(base64_img))
+                return web_path
     except KeyError as e:
         logging.error("Can't find image in cell: %s", cell['source'])
         raise e
