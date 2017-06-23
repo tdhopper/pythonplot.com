@@ -11,7 +11,7 @@ import logging
 import subprocess
 
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 md = markdown.Markdown(extensions=['meta', 'footnotes'])
 
 packages = {
@@ -50,6 +50,7 @@ def image_from_cell(cell):
     except KeyError as e:
         logging.error("Can't find image in cell: %s", cell['source'])
         raise e
+    raise Exception("Can't find an image in cell %s", cell['source'])
 
 
 def source_from_cell(cell):
@@ -83,6 +84,7 @@ def data_from_cell(cell):
     except KeyError as e:
         logging.error("Can't find data in cell: %s", cell['source'])
         raise e
+    raise Exception("Can't find an dataset in cell %s", cell['source'])
 
 
 def reorder_meta(meta):
