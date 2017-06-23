@@ -82,7 +82,10 @@
         <img class="img-fluid pb-4" src="http://pythonplot.com.s3-website-us-east-1.amazonaws.com/img/banner.png">
         <h1>Python Plotting for Exploratory Analysis</h1>
 
-        <blockquote>"The simple graph has brought more information to the data analyst's mind than any other device." — John Tukey</blockquote>
+        <blockquote class="blockquote">
+          <p>The simple graph has brought more information to the data analyst's mind than any other device.</p>
+          <footer class="blockquote-footer">John Tukey in <cite title="Source Title"><a href="https://books.google.com/books?id=JuQD42kUxzIC&pg=PA457&lpg=PA457#v=onepage&q&f=false" target='_new'>The Future of Data Analysis</a></cite></footer>
+        </blockquote>
 
         <h3>Contents</h3>
         <ul id="outline">
@@ -98,13 +101,11 @@
       </div>
 
       <div class="row"><div class="col-xs-12 col-lg-8 offset-lg-2">
-        <div class="card"><div class="card-block">
-          {% for name, table in data.items() %}
-            <h5>{{ name }}</h5>
+        {% for name, table in data.items() %}
+          <h5>{{ name }}</h5>
 
-            {{ table }}
-          {% endfor %}
-        </div></div>
+          {{ table }}
+        {% endfor %}
       </div></div>
 
       <hr>

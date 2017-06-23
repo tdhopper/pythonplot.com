@@ -72,11 +72,13 @@ def tags_from_cell(cell, type='ex'):
 
 
 def data_from_cell(cell):
+    classes = "table table-sm table-striped table-responsive table-bordered"
     try:
         for c in cell['outputs']:
             if 'data' in c and 'text/html' in c['data']:
                 table = ' '.join(c['data']['text/html'])
-                table = table.replace('border="1" class="dataframe"', 'class="table table-sm table-striped table-responsive"')
+                table = table.replace('border="1" class="dataframe"', 'class="{}"'.format(classes))
+                table = table.replace('<thead>', '<thead class="thead-inverse">')
                 return table
     except KeyError as e:
         logging.error("Can't find data in cell: %s", cell['source'])
