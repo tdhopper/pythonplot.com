@@ -26,3 +26,8 @@ body {
 table {
     font-family: monospace;
 }
+
+section {
+    padding-top: 60px;
+    margin-top: -60px;
+}

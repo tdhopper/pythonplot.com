@@ -38,6 +38,7 @@
     <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/pygments-native.css" rel="stylesheet">
@@ -111,9 +112,10 @@
       <hr>
       <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
-          <div class="card mb-4" id="{{ slug }}">
+        <section id="{{ slug }}">
+          <div class="card mb-4">
             <div class="card-header">
-              <h3 class="card-title mb-1">{{ name }}</h3>
+              <h3 class="card-title mb-1"><a href="#{{ slug }}"><i class="fa fa-link" aria-hidden="true"></i></a> {{ name }}</h3>
               <ul class="nav nav-tabs card-header-tabs">
                 {% for plot in items %}
                 <li class="nav-item">
@@ -155,9 +157,10 @@
               </div>
             </div>
           </div>
+        </section>
         {% endfor %}
-
-      </div></div>
+        </div>
+      </div>
 
       <div class="row">
          <div class="col-3">© 2017 <a href="http://tdhopper.com">Tim Hopper</a></div>
