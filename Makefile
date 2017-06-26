@@ -9,6 +9,7 @@ all: render s3_upload
 clean:
 	rm -f Examples.*.ipynb
 	rm -f *.pyc
+	rm -f *.Rhistory
 
 travis: render
 	echo "Done"
