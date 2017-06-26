@@ -30,4 +30,7 @@ dev_environment:
 	conda env update
 	source activate pythonplot && pip install -r requirements.txt
 
-.PHONY: all render s3_upload run_nb travis clean invalidate_cache
+cloudfront_invalidate:
+	python .travis/invalidate_cloudfront.py
+
+.PHONY: all render s3_upload run_nb travis clean invalidate_cache cloudfront_invalidate
