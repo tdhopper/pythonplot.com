@@ -9,7 +9,7 @@ all: render s3_upload
 clean:
 	rm -f Examples.*.ipynb
 	rm -f *.pyc
-	rm -f .Rhistory
+	rm -f  .Rhistory
 
 travis: render
 	echo "Done"
@@ -26,7 +26,8 @@ s3_upload:
 run_nb:
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
-invalidate_cache:
-	AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY python ./.travis/cloudfront_invalidate.py
+dev_environment:
+	conda env update
+	source activate pythonplot && pip install -r requirements.txt
 
 .PHONY: all render s3_upload run_nb travis clean invalidate_cache

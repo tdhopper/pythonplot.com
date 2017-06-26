@@ -35,5 +35,3 @@ deploy:
     detect_encoding: true
     on:
       branch: master
-after_deploy:
-  - make invalidate_cache
