@@ -26,4 +26,7 @@ s3_upload:
 run_nb:
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
-.PHONY: all render s3_upload run_nb travis clean
+invalidate_cache:
+	AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY python ./.travis/cloudfront_invalidate.py
+
+.PHONY: all render s3_upload run_nb travis clean invalidate_cache
