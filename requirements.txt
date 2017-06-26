@@ -1,5 +1,6 @@
 bokeh
 selenium
+pillow
 ipython
 pandas
 jupyter
