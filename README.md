@@ -49,7 +49,9 @@ Available at [pythonplot.com](http://pythonplot.com/)
 
 The site is generated from plots in the `Examples.ipynb` Python 3, Jupyter notebook.
 
-Each plot is tagged with metadata using Jupyter cell tags. You can view the cell tags in your notebook with `View > Cell Toolbar > Tags`.
+You can create a [Conda](https://conda.io/docs/install/quick.html) dev environment to run the notebook with `make dev_environment`.
+
+Each plot in the notebook is tagged with metadata using Jupyter cell tags. You can view the cell tags in your notebook with `View > Cell Toolbar > Tags`.
 
 The tags look like this:
 

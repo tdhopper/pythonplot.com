@@ -1,0 +1,5 @@
+name: pythonplot
+dependencies:
+  - python>=3.6
+  - pip
+  - r-essentials
