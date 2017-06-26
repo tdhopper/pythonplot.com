@@ -6,6 +6,10 @@ S3_BUCKET=pythonplot.com
 all: render s3_upload
 	echo "Done"
 
+clean:
+	rm -f Examples.*.ipynb
+	rm -f *.pyc
+
 travis: render
 	echo "Done"
 
@@ -21,4 +25,4 @@ s3_upload:
 run_nb:
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
-.PHONY: all render s3_upload run_nb travis
+.PHONY: all render s3_upload run_nb travis clean
