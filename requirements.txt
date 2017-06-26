@@ -1,3 +1,5 @@
+bokeh
+selenium
 ipython
 pandas
 jupyter
