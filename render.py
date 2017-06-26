@@ -154,7 +154,7 @@ if __name__ == '__main__':
     plots = extract_cells(sys.argv[1])
     data = extract_data(sys.argv[1])
 
-    env = Environment(loader=FileSystemLoader('web'), extensions=['jinja2_highlight.HighlightExtension'])
+    env = Environment(loader=FileSystemLoader('templates'), extensions=['jinja2_highlight.HighlightExtension'])
     template = env.get_template('t_index.html')
     output_from_parsed_template = template.render(intro=md.convert(intro),
                                                   plots=plots,
