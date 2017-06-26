@@ -35,3 +35,5 @@ deploy:
     detect_encoding: true
     on:
       branch: master
+after_deploy:
+  - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY ./.travis/reset_cloudfront_cache.sh
