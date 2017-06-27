@@ -15,6 +15,7 @@ before_install:
   # Useful for debugging any issues with conda
   - conda info -a
   - conda install r-essentials pip
+  - conda install -c r rpy2
   - Rscript .travis/setup.R
 install: "pip install -r requirements.txt"
 script: make travis

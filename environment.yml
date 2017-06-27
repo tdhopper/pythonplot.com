@@ -1,5 +1,9 @@
 name: pythonplot
+channels:
+  - r
+  - defaults
 dependencies:
   - python>=3.6
   - pip
   - r-essentials
+  - r:rpy2
