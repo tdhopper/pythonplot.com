@@ -33,4 +33,4 @@ dev_environment:
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py
 
-.PHONY: all render s3_upload run_nb travis clean invalidate_cache cloudfront_invalidate
+.PHONY: all render s3_upload run_nb travis clean cloudfront_invalidate
