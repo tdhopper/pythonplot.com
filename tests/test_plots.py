@@ -22,5 +22,5 @@ defined_plots = {'bar-counts': ['pandas', 'plotnine', 'ggplot', ],
 def test_exist():
     plots = render.extract_cells("Examples.ipynb")
     for name, slug in plots:
-        names = [d['package-slug', ] for d in plots[(name, slug)]]
+        names = [d['package-slug'] for d in plots[(name, slug)]]
         assert set(names) == set(defined_plots[slug])
