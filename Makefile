@@ -11,8 +11,11 @@ clean:
 	rm -f *.pyc
 	rm -f  .Rhistory
 
-travis: render
+travis: test render
 	echo "Done"
+
+test:
+	python -m pytest tests/
 
 qrender:
 	python render.py "Examples.ipynb"
