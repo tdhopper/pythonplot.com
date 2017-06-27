@@ -38,10 +38,10 @@ linux_conda:
 	bash miniconda.sh -b -p $HOME/miniconda
 	rm -f miniconda.sh
 	$(shell hash -r)
-	conda config --set always_yes yes --set changeps1 no
-	conda update -q conda
-	conda info -a
-	conda install r-essentials pip
-	conda install -c r rpy2
+	$HOME/miniconda/bin/conda config --set always_yes yes --set changeps1 no
+	$HOME/miniconda/bin/conda update -q conda
+	$HOME/miniconda/bin/conda info -a
+	$HOME/miniconda/bin/conda install r-essentials pip
+	$HOME/miniconda/bin/conda install -c r rpy2
 
 .PHONY: all render s3_upload run_nb travis clean cloudfront_invalidate linux_conda
