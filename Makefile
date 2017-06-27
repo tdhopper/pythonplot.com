@@ -33,4 +33,15 @@ dev_environment:
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py
 
-.PHONY: all render s3_upload run_nb travis clean invalidate_cache cloudfront_invalidate
+linux_conda:
+	wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+	bash miniconda.sh -b -p $HOME/miniconda
+	rm -f miniconda.sh
+	hash -r
+	conda config --set always_yes yes --set changeps1 no
+	conda update -q conda
+	conda info -a
+	conda install r-essentials pip
+	conda install -c r rpy2
+
+.PHONY: all render s3_upload run_nb travis clean cloudfront_invalidate linux_conda
