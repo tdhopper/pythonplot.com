@@ -11,3 +11,4 @@ jinja2-highlight
 markdown
 scikit-misc
 boto3
+pytest
