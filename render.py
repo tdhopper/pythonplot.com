@@ -23,6 +23,7 @@ packages = {
     "plotnine": "plotnine",
     "ggplot": "ggplot2 (R)",
     "bokeh": "Bokeh",
+    "plotly": "plotly",
 }
 
 names = {
