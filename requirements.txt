@@ -12,3 +12,5 @@ markdown
 scikit-misc
 boto3
 pytest
+plotly
+statsmodels

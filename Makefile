@@ -10,7 +10,10 @@ clean:
 	rm -f *.pyc
 	rm -f  .Rhistory
 
-travis: test render
+travis: plotly_auth test render
+
+plotly_auth:
+	python ./.travis/authenticate_plotly.py
 
 test:
 	python -m pytest tests/
@@ -34,4 +37,4 @@ dev_environment:
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py
 
-.PHONY: all qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment
+.PHONY: all qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment plotly_auth
