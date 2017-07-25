@@ -11,6 +11,7 @@ clean:
 	rm -f  .Rhistory
 
 travis: test render
+	python ./.travis/ authenticate_plotly.py
 
 test:
 	python -m pytest tests/
