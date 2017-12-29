@@ -24,6 +24,9 @@ packages = {
     "ggplot": "ggplot2 (R)",
     "bokeh": "Bokeh",
     "plotly": "plotly",
+    "cufflinks": "cufflinks",
+    "altair": "altair",
+    "pygal": "pygal"
 }
 
 names = {
