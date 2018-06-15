@@ -14,3 +14,4 @@ boto3
 pytest
 plotly
 statsmodels
+rpy2
