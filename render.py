@@ -21,9 +21,9 @@ packages = {
     "matplotlib": "Matplotlib",
     "seaborn": "Seaborn",
     "plotnine": "plotnine",
-    "ggplot": "ggplot2 (R)",
     "bokeh": "Bokeh",
     "plotly": "plotly",
+    "ggplot": "ggplot2 (R)",
 }
 
 names = {
