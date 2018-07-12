@@ -61,8 +61,23 @@ name:scatter-with-regression
 package:ggplot
 ```
 
+If you are using Jupyter lab, these are available through the `Cell Tools` left sidebar menu:
+```
+{
+    "tags": [
+        "ex",
+        "name:scatter-with-regression",
+        "package:ggplot"
+    ]
+}
+```
+
 `ex` identifies the cell as an example. The `name` tag corresponds to an item in the `names` dictionary in `render.py`. The `package` tag corresponds to a package in the `packages` dict in `render.py`.
 
-At the moment, the code must return a png image into the output cell. A Markdown comment can be added within triple quotes on the first line of the cell. (This currently doesn't work for `R` cells.)
+The site layout current allows for ~46 characters in the code window. Please keep this in mind and wrap your code to avoid too much side scrolling.
 
-You can render the images to `web/index.html` by running `$ make`.
+At the moment, the code must return a png image into the output cell. To generate image files with `plotly`, using their server is currently the only way. Please see the [getting started page](https://plot.ly/python/getting-started/) for instructions on the `.credentials` file.
+
+A Markdown comment can be added within triple quotes on the first line of the cell. (This currently doesn't work for `R` cells.)
+
+You can render the images to `web/img/plots` by running `$ make`. Afterward, launch a local server (e.g. `python -m http.server`) from the `web` directory.
