@@ -31,8 +31,8 @@ run_nb:
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
 dev_environment:
-	conda env update
-	source activate pythonplot && pip install -r requirements.txt
+	conda env update -q
+	source activate pythonplot && pip install -q -r requirements.txt
 
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py

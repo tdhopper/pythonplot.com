@@ -5,5 +5,3 @@ hash -r
 $HOME/miniconda/bin/conda config --set always_yes yes --set changeps1 no
 $HOME/miniconda/bin/conda update -q conda
 $HOME/miniconda/bin/conda info -a
-$HOME/miniconda/bin/conda install r-essentials pip
-$HOME/miniconda/bin/conda install -c r rpy2
