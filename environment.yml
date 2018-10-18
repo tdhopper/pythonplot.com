@@ -6,4 +6,5 @@ dependencies:
   - python>=3.6
   - pip
   - r-essentials
-  - rpy2
+  - mro-base
+  - r-ggplot2
