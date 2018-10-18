@@ -11,8 +11,6 @@ install: "pip install -r requirements.txt"
 script: make travis
 after_script:
   - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/Examples.$(git log -1 --pretty=format:'%h').ipynb"
-addons:
-  artifacts: true
 before_deploy:
   - npm install netlify-cli -g
 deploy:
