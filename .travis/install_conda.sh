@@ -5,5 +5,5 @@ hash -r
 $HOME/miniconda/bin/conda config --set always_yes yes --set changeps1 no
 $HOME/miniconda/bin/conda update -q conda
 $HOME/miniconda/bin/conda info -a
-$HOME/miniconda/bin/conda install --quiet pip readline
-$HOME/miniconda/bin/conda install --quiet --channel r r-base rpy2
+$HOME/miniconda/bin/conda install --quiet pip readline r-essentials
+$HOME/miniconda/bin/conda install --quiet --channel r rpy2
