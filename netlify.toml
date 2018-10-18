@@ -1,7 +1,0 @@
-[Settings]
-ID = "32821e8f-9883-4f1e-995f-6ce77849ff6f"
-
-[build]
-  publish = "./web"
-
-  command = "make render"
