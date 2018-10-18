@@ -5,6 +5,5 @@ channels:
 dependencies:
   - python>=3.6
   - pip
-  - r-essentials
   - mro-base
   - r-ggplot2
