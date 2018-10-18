@@ -13,19 +13,11 @@ after_script:
   - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/Examples.$(git log -1 --pretty=format:'%h').ipynb"
 addons:
   artifacts: true
+before_deploy:
+  - npm install netlify-cli -g
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: pythonplot.com
-    endpoint: pythonplot.com.s3-website-us-east-1.amazonaws.com
-    region: us-east-1
-    skip_cleanup: true
-    local-dir: web
-    acl: public_read
-    default_text_charset: 'utf-8'
-    detect_encoding: true
-    on:
-      branch: master
-after_deploy:
-  - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY python .travis/invalidate_cloudfront.py
+  provider: script
+  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./web
+  skip_cleanup: true
+  on:
+    branch: netlify
