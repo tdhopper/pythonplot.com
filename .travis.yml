@@ -5,7 +5,7 @@ notifications:
   email: false
 before_install:
   - export PATH="$HOME/miniconda/bin:$PATH"
-  - sudo apt-get update
+  - sudo apt-get -qq update
   - bash .travis/install_conda.sh
 install: "pip install -r requirements.txt"
 script: make travis
