@@ -16,3 +16,4 @@ plotly
 statsmodels
 rpy2
 tzlocal
+simplegeneric
