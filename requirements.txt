@@ -17,3 +17,5 @@ statsmodels
 rpy2
 tzlocal
 simplegeneric
+altair
+vega == 1.3.0
