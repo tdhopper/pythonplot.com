@@ -1,6 +1,6 @@
 import render
 
-defined_plots = {'bar-counts': ['pandas', 'plotnine', 'ggplot', 'plotly', ],
+defined_plots = {'bar-counts': ['pandas', 'plotnine', 'ggplot', 'plotly', 'altair', ],
                  'dodged-bar-chart': ['pandas', 'plotnine', 'ggplot', 'plotly', ],
                  'scatter-plot': ['pandas', 'plotnine', 'ggplot', 'plotly', ],
                  'scatter-plot-with-colors': ['matplotlib',

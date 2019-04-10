@@ -24,6 +24,7 @@ packages = {
     "bokeh": "Bokeh",
     "plotly": "plotly",
     "ggplot": "ggplot2 (R)",
+    "altair": "Altair",
 }
 
 names = {
