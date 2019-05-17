@@ -13,7 +13,7 @@ scikit-misc
 boto3
 pytest
 plotly
-statsmodels
+statsmodels>=0.9.0
 rpy2
 tzlocal
 simplegeneric
