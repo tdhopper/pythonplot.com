@@ -13,6 +13,7 @@ scikit-misc
 boto3
 pytest
 plotly
+scipy==1.0.1
 statsmodels>=0.9.0
 rpy2
 tzlocal
