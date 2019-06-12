@@ -12,5 +12,6 @@ else
         --auth $NETLIFY_AUTH_TOKEN \
         --site $NETLIFY_SITE_ID \
         --dir ./web \
-        --message "Preview deploy from Travis CI"
+        --message "Preview deploy from Travis CI" \
+        --prod
 fi
