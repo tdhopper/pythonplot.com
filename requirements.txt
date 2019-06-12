@@ -1,3 +1,4 @@
+cython
 bokeh
 selenium
 pillow
