@@ -10,7 +10,7 @@ clean:
 	rm -f *.pyc
 	rm -f  .Rhistory
 
-travis: plotly_auth test render
+travis: test render
 
 plotly_auth:
 	python ./.travis/authenticate_plotly.py
