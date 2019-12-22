@@ -17,3 +17,4 @@ statsmodels==0.10.0rc2 --pre
 rpy2
 tzlocal
 simplegeneric
+altair
