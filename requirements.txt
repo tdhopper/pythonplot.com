@@ -5,6 +5,7 @@ ipython
 pandas
 jupyter
 seaborn
+plotly
 plotnine
 jinja2
 jinja2-highlight
@@ -12,7 +13,7 @@ markdown
 scikit-misc
 boto3
 pytest
-plotly
+chart-studio
 statsmodels==0.10.0rc2 --pre
 rpy2
 tzlocal
