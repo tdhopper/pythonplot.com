@@ -5,7 +5,6 @@ ipython
 pandas
 jupyter
 seaborn
-plotly
 plotnine
 jinja2
 jinja2-highlight
