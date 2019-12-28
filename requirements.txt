@@ -15,6 +15,7 @@ pytest
 chart-studio
 statsmodels==0.10.0rc2 --pre
 rpy2
+psutil
 plotly
 tzlocal
 simplegeneric
