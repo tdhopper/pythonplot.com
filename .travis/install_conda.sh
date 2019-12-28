@@ -5,6 +5,7 @@ hash -r
 $HOME/miniconda/bin/conda config --set always_yes yes --set changeps1 no
 $HOME/miniconda/bin/conda update -q conda
 $HOME/miniconda/bin/conda info -a
-$HOME/miniconda/bin/conda install --quiet pip readline r-essentials
-$HOME/miniconda/bin/conda install --quiet --channel r rpy2
-$HOME/miniconda/bin/conda install --quiet -c plotly plotly-orca
+conda install --quiet pip readline r-essentials
+conda install --quiet --channel r rpy2
+wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O orca.AppImage
+chmod +x orca.AppImage
