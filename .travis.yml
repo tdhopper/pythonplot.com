@@ -8,10 +8,9 @@ before_install:
   - sudo apt-get -qq update
   - bash .travis/install_conda.sh
 install: "pip install --quiet -r requirements.txt"
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+dist: xenial
+services:
+  - xvfb
 script: make travis
 after_script:
   - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/Examples.$(git log -1 --pretty=format:'%h').ipynb"
