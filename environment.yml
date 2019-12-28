@@ -2,10 +2,10 @@ name: pythonplot
 channels:
   - r
   - defaults
+  - plotly
 dependencies:
   - python>=3.6
   - pip
   - mro-base
   - r-ggplot2
-  - plotly
   - plotly-orca

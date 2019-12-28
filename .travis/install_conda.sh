@@ -7,4 +7,4 @@ $HOME/miniconda/bin/conda update -q conda
 $HOME/miniconda/bin/conda info -a
 $HOME/miniconda/bin/conda install --quiet pip readline r-essentials
 $HOME/miniconda/bin/conda install --quiet --channel r rpy2
-$HOME/miniconda/bin/conda install --quiet plotly plotly-orca
+$HOME/miniconda/bin/conda install --quiet -c plotly plotly-orca
