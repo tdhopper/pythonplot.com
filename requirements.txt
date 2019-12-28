@@ -14,7 +14,7 @@ boto3
 pytest
 chart-studio
 statsmodels==0.10.0rc2 --pre
-rpy2s
+rpy2
 plotly
 tzlocal
 simplegeneric
