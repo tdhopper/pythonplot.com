@@ -67,7 +67,7 @@ def image_from_cell(cell):
 def source_from_cell(cell):
     source = "".join(cell['source']).strip()
     source = source.replace(";", "")
-    source = re.sub(r"^Image\(.*\)", "", source) # remove bokeh render
+    source = re.sub(r"\bImage\(.*\)", "", source) # remove bokeh render
     if "%%R" in source:
         source = '\n'.join(source.split('\n')[1:])
     else:
