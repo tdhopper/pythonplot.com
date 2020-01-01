@@ -21,8 +21,8 @@ packages = {
     "matplotlib": "Matplotlib",
     "seaborn": "Seaborn",
     "plotnine": "plotnine",
-    "bokeh": "Bokeh",
     "plotly": "plotly",
+    "altair": "Altair",
     "ggplot": "ggplot2 (R)",
 }
 
