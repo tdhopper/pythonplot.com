@@ -19,3 +19,4 @@ plotly
 tzlocal
 simplegeneric
 altair
+selenium
