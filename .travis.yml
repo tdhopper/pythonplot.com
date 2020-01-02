@@ -1,19 +1,16 @@
 language: python
 python:
-  - '3.6'
+  - '3.7'
 notifications:
   email: true
 before_install:
-  - export PATH="./.travis:$HOME/miniconda/bin:$PATH"
-  - sudo apt-get -qq update
-  - bash .travis/install_conda.sh
+  - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O orca.AppImage
+  - chmod +x orca.AppImage
 install: "pip install --quiet -r requirements.txt"
 dist: xenial
 services:
   - xvfb
 script: make travis
-after_script:
-  - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/Examples.$(git log -1 --pretty=format:'%h').ipynb"
 before_deploy:
   - npm install netlify-cli -g
 deploy:
@@ -25,5 +22,8 @@ deploy:
 addons:
   artifacts: true
   apt:
+    sources:
+    - r-packages-precise
     packages:
-      firefox-geckodriver
+    - firefox-geckodriver
+    - r-base
