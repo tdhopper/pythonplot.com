@@ -21,8 +21,8 @@ packages = {
     "matplotlib": "Matplotlib",
     "seaborn": "Seaborn",
     "plotnine": "plotnine",
-    "bokeh": "Bokeh",
     "plotly": "plotly",
+    "altair": "Altair",
     "ggplot": "ggplot2 (R)",
 }
 
@@ -69,6 +69,8 @@ def source_from_cell(cell):
     source = source.replace(";", "")
     source = re.sub(r"\bImage\(.*\)", "", source) # remove bokeh render
     if "%%R" in source:
+        source = '\n'.join(source.split('\n')[1:])
+    if "%%altair" in source:
         source = '\n'.join(source.split('\n')[1:])
     else:
         source = source.replace('"', "'")

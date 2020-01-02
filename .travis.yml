@@ -24,3 +24,6 @@ deploy:
     all_branches: true
 addons:
   artifacts: true
+  apt:
+    packages:
+      firefox-geckodriver

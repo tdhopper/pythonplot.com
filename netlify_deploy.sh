@@ -1,17 +1,16 @@
 #!/bin/bash
 
-if [ $TRAVIS_BRANCH = "foo" ]; then
+if [ $TRAVIS_BRANCH = "master" ]; then
     netlify deploy \
         --auth $NETLIFY_AUTH_TOKEN \
         --site $NETLIFY_SITE_ID \
         --dir ./web \
         --prod \
         --message "Production deploy from Travis CI"
-else 
+else
     netlify deploy \
         --auth $NETLIFY_AUTH_TOKEN \
         --site $NETLIFY_SITE_ID \
         --dir ./web \
-        --message "Preview deploy from Travis CI" \
-        --prod
+        --message "Preview deploy from Travis CI"
 fi

@@ -1,4 +1,3 @@
-bokeh
 selenium
 pillow
 ipython
@@ -19,3 +18,5 @@ psutil
 plotly
 tzlocal
 simplegeneric
+altair
+selenium
