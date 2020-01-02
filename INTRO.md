@@ -28,19 +28,15 @@ Many excellent plotting tools are built on top of Matplotlib.
 
 There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/pythonplot.com).
 
-"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics")." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."[^jake]
-
-Fundamentally, Altair renders JSON-descriptions of plots that are rendered by Vega-Lite; this JSON could be rendered by other backends as well, and I'm told a Matplotlib backend is under development.
-
-Altair is new on the scene and offers a lot of promise. I hope to add Altair examples here now that 2.0 is released.
+"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics")." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."[^jake] I provide Altair examples rendered as static images.
 
 [^jake]: See [here](https://speakerdeck.com/jakevdp/visualization-in-python-with-altair).
+
+"[plotly](https://plot.ly/ "Plotly - Make charts and dashboards online")'s Python graphing library makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts." I provide plotly examples rendered as static images.
 
 "[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation."
 
 "[bqplot](https://github.com/bloomberg/bqplot) is a Grammar of Graphics-based interactive plotting framework for the Jupyter notebook."
-
-"[plotly](https://plot.ly/ "Plotly - Make charts and dashboards online")'s Python graphing library makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts."
 
 ### The Python Plotting Landscape
 
