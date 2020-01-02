@@ -70,6 +70,8 @@ def source_from_cell(cell):
     source = re.sub(r"\bImage\(.*\)", "", source) # remove bokeh render
     if "%%R" in source:
         source = '\n'.join(source.split('\n')[1:])
+    if "%%altair" in source:
+        source = '\n'.join(source.split('\n')[1:])
     else:
         source = source.replace('"', "'")
     if source.startswith('"""') or source.startswith("'''"):
