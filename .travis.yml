@@ -1,3 +1,12 @@
+dist: xenial
+addons:
+  artifacts: true
+  apt:
+    sources:
+    - r-packages-precise
+    packages:
+    - firefox-geckodriver
+    - r-base
 language: python
 python:
   - '3.7'
@@ -9,9 +18,8 @@ install:
   - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O orca.AppImage
   - chmod +x orca.AppImage 
   - pip install --quiet -r requirements.txt
-after_install:
-  - pip freeze  
-dist: xenial
+before_script:
+  - pip freeze
 services:
   - xvfb
 script: make travis
@@ -23,11 +31,3 @@ deploy:
   skip_cleanup: true
   on:
     all_branches: true
-addons:
-  artifacts: true
-  apt:
-    sources:
-    - r-packages-precise
-    packages:
-    - firefox-geckodriver
-    - r-base
