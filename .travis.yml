@@ -10,6 +10,7 @@ python:
 notifications:
   email: true
 install:
+  - npm install -g electron@1.8.4 orca
   - sudo add-apt-repository --yes ppa:marutter/rrutter3.5
   - sudo apt-get update --yes
   - sudo apt install r-api-3.5 --yes
