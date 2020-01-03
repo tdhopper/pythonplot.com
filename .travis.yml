@@ -13,6 +13,8 @@ install:
   - sudo add-apt-repository --yes ppa:marutter/rrutter3.5
   - sudo apt-get update --yes
   - sudo apt install r-api-3.5 --yes
+  - sudo apt-get install r-cran-plyr --yes
+  - sudo apt-get install r-cran-reshape2 --yes
   - sudo apt install r-cran-ggplot2 --yes
   - mkdir $HOME/orca
   - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O $HOME/orca/orca
