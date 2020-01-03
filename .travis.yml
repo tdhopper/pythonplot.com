@@ -5,9 +5,12 @@ notifications:
   email: true
 before_install:
   - R --version
+install:
   - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O orca.AppImage
-  - chmod +x orca.AppImage
-install: "pip install --quiet -r requirements.txt"
+  - chmod +x orca.AppImage 
+  - pip install --quiet -r requirements.txt
+after_install:
+  - pip freeze  
 dist: xenial
 services:
   - xvfb
