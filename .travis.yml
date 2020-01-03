@@ -10,9 +10,9 @@ python:
 notifications:
   email: true
 install:
-  - sudo add-apt-repository ppa:marutter/rrutter3.5
-  - sudo apt-get update
-  - sudo apt install r-api-3.5
+  - sudo add-apt-repository --yes ppa:marutter/rrutter3.5
+  - sudo apt-get update --yes
+  - sudo apt install r-api-3.5 --yes
   - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O orca.AppImage
   - chmod +x orca.AppImage 
   - pip install --quiet -r requirements.txt
