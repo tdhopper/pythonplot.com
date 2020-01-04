@@ -1,19 +1,33 @@
+dist: xenial
+addons:
+  artifacts: true
+  apt:
+    packages:
+    - firefox-geckodriver
 language: python
 python:
-  - '3.6'
+  - '3.7'
 notifications:
   email: true
-before_install:
-  - export PATH="./.travis:$HOME/miniconda/bin:$PATH"
-  - sudo apt-get -qq update
-  - bash .travis/install_conda.sh
-install: "pip install --quiet -r requirements.txt"
-dist: xenial
+install:
+  - sudo add-apt-repository --yes ppa:marutter/rrutter3.5
+  - sudo apt-get update --yes
+  - sudo apt install r-api-3.5 --yes
+  - sudo apt-get install r-cran-mgcv
+  - sudo su - -c "R -e \"install.packages('ggplot2', repos='http://cran.rstudio.com/')\""
+  - mkdir $HOME/orca
+  - wget --quiet https://github.com/plotly/orca/releases/download/v1.2.1/orca-1.2.1-x86_64.AppImage -O $HOME/orca/orca
+  - chmod +x $HOME/orca/orca
+  - export PATH="${HOME}/orca:${PATH}"
+  - pip install --quiet -r requirements.txt
+before_script:
+  - echo $PATH
+  - $HOME/orca/orca --help
+  - orca --help
+  - pip freeze
 services:
   - xvfb
 script: make travis
-after_script:
-  - echo "Rendered notebook http://nbviewer.jupyter.org/urls/s3.amazonaws.com/pythonplotbuilds/tdhopper/pythonplot.com/$TRAVIS_BUILD_NUMBER/$TRAVIS_JOB_NUMBER/Examples.$(git log -1 --pretty=format:'%h').ipynb"
 before_deploy:
   - npm install netlify-cli -g
 deploy:
@@ -22,8 +36,3 @@ deploy:
   skip_cleanup: true
   on:
     all_branches: true
-addons:
-  artifacts: true
-  apt:
-    packages:
-      firefox-geckodriver
