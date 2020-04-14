@@ -19,5 +19,5 @@ plotly
 tzlocal
 simplegeneric
 altair
-altair_saver
+altair-saver
 selenium
