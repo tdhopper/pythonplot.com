@@ -8,9 +8,7 @@ In particular, I make a lot of bar charts (including histograms), line plots (in
 
 Python plotting libraries are manifold. Most well known is Matplotlib.
 
-"[Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting") is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms." Native Matplotlib is the cause of [frustration](https://stackoverflow.com/questions/tagged/matplotlib) to many data analysts due to the complex syntax. Much of that frustration would be alleviated if it were recognized as a library of lower level plotting primitives on which other tools can be built.[^frustration]
-
-[^frustration]: If you are frustrated by Matplotlib and haven't read [Effectively Using Matplotlib](http://pbpython.com/effective-matplotlib.html) by [Chris Moffitt](https://twitter.com/chris1610), go read it.
+"[Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting") is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms." Native Matplotlib is the cause of [frustration](https://stackoverflow.com/questions/tagged/matplotlib) to many data analysts due to the complex syntax. Much of that frustration would be alleviated if it were recognized as a library of lower level plotting primitives on which other tools can be built. (If you are frustrated by Matplotlib and haven't read [Effectively Using Matplotlib](http://pbpython.com/effective-matplotlib.html) by [Chris Moffitt](https://twitter.com/chris1610), go read it.)
 
 #### Matplotlib-Based Libraries
 
@@ -18,19 +16,16 @@ Many excellent plotting tools are built on top of Matplotlib.
 
 [Pandas plots](https://pandas.pydata.org/pandas-docs/stable/visualization.html "pandas documentation") provides the "basics to easily create decent looking plots" from data frames. It provides about 70% of what I want to do day-to-day. Importantly, it lacks robust faceting capabilities.
 
-"[plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of graphics in Python, it is based on ggplot2." plotnine is a recent attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.[^ggpy]
+"[plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of graphics in Python, it is based on ggplot2." plotnine is a attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.
 
 "[Seaborn](https://seaborn.pydata.org/ "Seaborn: statistical data visualization") is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics." Seaborn makes beautiful plots but is geared toward specific statistical plots, not general purpose plotting. It does have a powerful [faceting utility function](http://seaborn.pydata.org/tutorial/axis_grids.html) that I use regularly.
-
-[^ggpy]: There is also [ggpy](https://github.com/yhat/ggpy "ggplot port for python"), a ggplot2 port, from the company formerly known as yhat. It appears to be abandoned.
 
 #### Interactive Plotting Libraries
 
 There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/pythonplot.com).
 
-"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics")." According to Jake Vanderplas, "Declarative visualization lets you think about data and relationships, rather than incidental details."[^jake] I provide Altair examples rendered as static images.
+"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics")." According to [Jake Vanderplas](https://speakerdeck.com/jakevdp/visualization-in-python-with-altair), "Declarative visualization lets you think about data and relationships, rather than incidental details." I provide Altair examples rendered as static images.
 
-[^jake]: See [here](https://speakerdeck.com/jakevdp/visualization-in-python-with-altair).
 
 "[plotly](https://plot.ly/ "Plotly - Make charts and dashboards online")'s Python graphing library makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts." I provide plotly examples rendered as static images.
 
