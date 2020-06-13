@@ -4,7 +4,7 @@ ipython
 pandas
 jupyter
 seaborn
-plotnine
+plotnine<0.7.0
 jinja2
 jinja2-highlight
 markdown
