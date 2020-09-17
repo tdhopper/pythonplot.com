@@ -15,7 +15,8 @@ chart-studio
 statsmodels==0.11.1
 rpy2
 psutil
-plotly
+plotly==4.10.0
+kaleido
 tzlocal
 simplegeneric
 altair
