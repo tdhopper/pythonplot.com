@@ -49,7 +49,28 @@ Available at [pythonplot.com](http://pythonplot.com/)
 
 The site is generated from plots in the `Examples.ipynb` Python 3, Jupyter notebook.
 
-You can create a [Conda](https://conda.io/docs/install/quick.html) dev environment to run the notebook with `make dev_environment`.
+#### Development Setup
+
+**Requirements:**
+- Python 3.11+
+- R 4.0+ (install via [Homebrew](https://brew.sh/) on macOS: `brew install r`, or from [CRAN](https://cran.r-project.org/))
+- [uv](https://github.com/astral-sh/uv) for Python package management
+
+**Quick Start:**
+```bash
+# Set up development environment (installs Python & R dependencies)
+make dev_environment
+
+# Or manually:
+# 1. Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. Install Python dependencies
+uv pip install -r requirements.txt
+
+# 3. Install R packages
+./setup_r.sh
+```
 
 Each plot in the notebook is tagged with metadata using Jupyter cell tags. You can view the cell tags in your notebook with `View > Cell Toolbar > Tags`.
 
@@ -76,8 +97,31 @@ If you are using Jupyter lab, these are available through the `Cell Tools` left 
 
 The site layout current allows for ~46 characters in the code window. Please keep this in mind and wrap your code to avoid too much side scrolling.
 
-At the moment, the code must return a png image into the output cell. To generate image files with `plotly`, using their server is currently the only way. Please see the [getting started page](https://plot.ly/python/getting-started/) for instructions on the `.credentials` file.
+At the moment, the code must return a png image into the output cell. With modern versions of plotly (v5+), images are rendered locally using Kaleido - no authentication required.
 
 A Markdown comment can be added within triple quotes on the first line of the cell. (This currently doesn't work for `R` cells.)
 
-You can render the images to `web/img/plots` by running `$ make`. Afterward, launch a local server (e.g. `python -m http.server`) from the `web` directory.
+#### Building the Site
+
+```bash
+# Quick render (uses existing notebook without re-execution)
+make qrender
+
+# Full build (executes notebook, then renders)
+make render
+
+# Run tests
+make test
+```
+
+After rendering, launch a local server from the `web` directory:
+```bash
+cd web && python -m http.server
+```
+
+#### CI/CD
+
+The project uses GitHub Actions for continuous integration and deployment:
+- **Pushes to `master`**: Automatically deployed to production on Netlify
+- **Other branches**: Create preview deployments on Netlify
+- Requires secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`
