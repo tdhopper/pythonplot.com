@@ -12,8 +12,14 @@ clean:
 
 travis: render
 
-plotly_auth:
-	python ./.travis/authenticate_plotly.py
+setup:
+	@echo "Setting up development environment..."
+	@echo "1. Installing Python dependencies with uv..."
+	@command -v uv >/dev/null 2>&1 || { echo "Installing uv..."; curl -LsSf https://astral.sh/uv/install.sh | sh; }
+	uv pip install -r requirements.txt
+	@echo "2. Installing R packages..."
+	@./setup_r.sh
+	@echo "✓ Setup complete!"
 
 test:
 	python -m pytest tests/
@@ -30,11 +36,13 @@ s3_upload:
 run_nb:
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
-dev_environment:
-	conda env update -q
-	source activate pythonplot && pip install -q -r requirements.txt
+dev_environment: setup
+	@echo "Development environment ready!"
+	@echo ""
+	@echo "Note: This project now uses uv instead of conda."
+	@echo "R must be installed separately on your system."
 
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py
 
-.PHONY: all qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment plotly_auth
+.PHONY: all qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment setup
