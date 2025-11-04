@@ -3,7 +3,9 @@ OUTPUTDIR=web
 
 S3_BUCKET=pythonplot.com
 
-all: render s3_upload
+all: render
+
+deploy: render s3_upload
 
 clean:
 	rm -f Examples.*.ipynb
@@ -45,4 +47,4 @@ dev_environment: setup
 cloudfront_invalidate:
 	python .travis/invalidate_cloudfront.py
 
-.PHONY: all qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment setup
+.PHONY: all deploy qrender render s3_upload run_nb travis clean cloudfront_invalidate test dev_environment setup
