@@ -1,0 +1,70 @@
+[project]
+name = "pythonplot"
+version = "0.1.0"
+description = "An Introduction to Python Plotting for Exploratory Data Analysis"
+authors = [
+    {name = "Tim Hopper", email = "tim@tdhopper.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+dependencies = [
+    # Core Jupyter/IPython
+    "ipython>=8.12",
+    "notebook>=7.0",
+    "jupyter>=1.0",
+
+    # Data manipulation
+    "pandas>=2.0",
+
+    # Plotting libraries
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+    "plotnine>=0.13",
+    "plotly>=5.24",
+    "altair>=5.0",
+
+    # Image rendering
+    "kaleido>=0.2.1",
+    "pillow>=10.0",
+    "selenium>=4.15",
+
+    # Statistical tools
+    "statsmodels>=0.14",
+    "scikit-misc>=0.3",
+
+    # R integration
+    "rpy2>=3.5",
+
+    # Template rendering
+    "jinja2>=3.1",
+    "jinja2-highlight>=0.6",
+    "markdown>=3.5",
+
+    # Utilities
+    "psutil>=5.9",
+    "tzlocal>=5.0",
+    "simplegeneric>=0.8",
+
+    # Cloud (if needed for deployment)
+    "boto3>=1.28",
+
+    # Testing
+    "pytest>=7.4",
+]
+
+[project.urls]
+Homepage = "https://pythonplot.com"
+Repository = "https://github.com/tdhopper/pythonplot.com"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

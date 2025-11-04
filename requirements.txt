@@ -1,24 +1,42 @@
-selenium
-pillow
-ipython
-pandas
-jupyter
-seaborn
-plotnine<0.7.0
-jinja2
-jinja2-highlight
-markdown
-scikit-misc
-boto3
-pytest
-chart-studio
-statsmodels==0.11.1
-rpy2
-psutil
-plotly==4.10.0
-kaleido
-tzlocal
-simplegeneric
-altair
-altair-saver
-selenium
+# Core Jupyter/IPython
+ipython>=8.12
+notebook>=7.0
+jupyter>=1.0
+
+# Data manipulation
+pandas>=2.0
+
+# Plotting libraries
+matplotlib>=3.7
+seaborn>=0.13
+plotnine>=0.13
+plotly>=5.24
+altair>=5.0
+
+# Image rendering and export
+kaleido>=0.2.1
+pillow>=10.0
+selenium>=4.15
+
+# Statistical tools
+statsmodels>=0.14
+scikit-misc>=0.3
+
+# R integration
+rpy2>=3.5
+
+# Template rendering
+jinja2>=3.1
+jinja2-highlight>=0.6
+markdown>=3.5
+
+# Utilities
+psutil>=5.9
+tzlocal>=5.0
+simplegeneric>=0.8
+
+# Cloud services (for deployment)
+boto3>=1.28
+
+# Testing
+pytest>=7.4
