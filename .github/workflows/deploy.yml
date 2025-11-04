@@ -1,0 +1,111 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3'
+
+      - name: Install R packages
+        run: |
+          R -e "install.packages(c('ggplot2', 'mgcv'), repos='https://cran.rstudio.com/')"
+
+      - name: Verify R installation
+        run: |
+          echo "R_HOME=$R_HOME"
+          R --version
+          R -e "library(ggplot2); library(mgcv); cat('R packages loaded successfully\n')"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install Python dependencies
+        run: |
+          uv pip install -r requirements.txt --system
+
+      - name: Verify Python packages
+        run: |
+          python -c "import pandas, plotly, seaborn, plotnine, altair, rpy2; print('Python packages imported successfully')"
+
+      - name: Setup Firefox for Selenium
+        uses: browser-actions/setup-firefox@v1
+
+      - name: Install geckodriver
+        run: |
+          wget -q https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux64.tar.gz
+          tar -xzf geckodriver-v0.34.0-linux64.tar.gz
+          sudo mv geckodriver /usr/local/bin/
+          geckodriver --version
+
+      - name: Setup Xvfb (virtual display)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+
+      - name: Run tests
+        run: |
+          xvfb-run -a python -m pytest tests/ -v
+        env:
+          R_HOME: /opt/R/4.3.3/lib/R
+
+      - name: Build site
+        run: |
+          xvfb-run -a make travis
+        env:
+          R_HOME: /opt/R/4.3.3/lib/R
+
+      - name: Deploy to Netlify (Production)
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: ./web
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions - ${{ github.event.head_commit.message }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Deploy to Netlify (Preview)
+        if: github.ref != 'refs/heads/master'
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: ./web
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Preview deploy from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: web/
+          retention-days: 7
