@@ -11,10 +11,11 @@ clean:
 	rm -f Examples.*.ipynb
 	rm -f *.pyc
 	rm -f  .Rhistory
+	rm -f .setup_done
 
 travis: render
 
-setup:
+.setup_done:
 	@echo "Setting up development environment..."
 	@echo "1. Installing Python dependencies with uv..."
 	@command -v uv >/dev/null 2>&1 || { echo "Installing uv..."; curl -LsSf https://astral.sh/uv/install.sh | sh; }
@@ -22,6 +23,9 @@ setup:
 	@echo "2. Installing R packages..."
 	@./setup_r.sh
 	@echo "✓ Setup complete!"
+	@touch .setup_done
+
+setup: .setup_done
 
 test:
 	python -m pytest tests/
@@ -29,13 +33,13 @@ test:
 qrender:
 	python render.py "Examples.ipynb"
 
-render: run_nb
+render: .setup_done run_nb
 	python render.py "Examples.$(GIT_COMMIT).ipynb"
 
 s3_upload:
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve
 
-run_nb:
+run_nb: .setup_done
 	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
 dev_environment: setup
