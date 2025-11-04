@@ -23,7 +23,7 @@ dependencies = [
     "vl-convert-python>=1.0",  # Required for Altair PNG export
 
     # Image rendering
-    "kaleido>=0.2.1",
+    "kaleido>=1.0",  # v1+ requires Chrome
     "pillow>=10.0",
     "selenium>=4.15",
 

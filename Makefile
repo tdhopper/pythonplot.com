@@ -20,7 +20,9 @@ travis: render
 	@echo "1. Installing Python dependencies with uv..."
 	@command -v uv >/dev/null 2>&1 || { echo "Installing uv..."; curl -LsSf https://astral.sh/uv/install.sh | sh; }
 	uv sync
-	@echo "2. Installing R packages..."
+	@echo "2. Installing Chrome for Kaleido..."
+	@uv run kaleido_get_chrome || echo "Chrome may already be installed"
+	@echo "3. Installing R packages..."
 	@./setup_r.sh
 	@echo "✓ Setup complete!"
 	@touch .setup_done
