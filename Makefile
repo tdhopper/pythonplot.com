@@ -19,7 +19,7 @@ travis: render
 	@echo "Setting up development environment..."
 	@echo "1. Installing Python dependencies with uv..."
 	@command -v uv >/dev/null 2>&1 || { echo "Installing uv..."; curl -LsSf https://astral.sh/uv/install.sh | sh; }
-	uv pip install -r requirements.txt
+	uv sync
 	@echo "2. Installing R packages..."
 	@./setup_r.sh
 	@echo "✓ Setup complete!"
@@ -27,20 +27,20 @@ travis: render
 
 setup: .setup_done
 
-test:
-	python -m pytest tests/
+test: .setup_done
+	uv run pytest tests/
 
-qrender:
-	python render.py "Examples.ipynb"
+qrender: .setup_done
+	uv run python render.py "Examples.ipynb"
 
 render: .setup_done run_nb
-	python render.py "Examples.$(GIT_COMMIT).ipynb"
+	uv run python render.py "Examples.$(GIT_COMMIT).ipynb"
 
 s3_upload:
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve
 
 run_nb: .setup_done
-	jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
+	uv run jupyter nbconvert --to notebook --execute "Examples.ipynb" --output "Examples.$(GIT_COMMIT).ipynb"
 
 dev_environment: setup
 	@echo "Development environment ready!"

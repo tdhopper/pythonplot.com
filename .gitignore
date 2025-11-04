@@ -2,3 +2,5 @@ web/index.html
 web/img/plots/
 Examples.*.ipynb
 .setup_done
+.venv/
+uv.lock
