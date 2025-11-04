@@ -20,6 +20,7 @@ dependencies = [
     "plotnine>=0.13",
     "plotly>=5.24",
     "altair>=5.0",
+    "vl-convert-python>=1.0",  # Required for Altair PNG export
 
     # Image rendering
     "kaleido>=0.2.1",

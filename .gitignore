@@ -4,3 +4,5 @@ Examples.*.ipynb
 .setup_done
 .venv/
 uv.lock
+# Local Netlify folder
+.netlify

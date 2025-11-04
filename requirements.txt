@@ -12,6 +12,7 @@ seaborn>=0.13
 plotnine>=0.13
 plotly>=5.24
 altair>=5.0
+vl-convert-python>=1.0
 
 # Image rendering and export
 kaleido>=0.2.1
