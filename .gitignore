@@ -3,6 +3,6 @@ web/img/plots/
 Examples.*.ipynb
 .setup_done
 .venv/
-uv.lock
+__pycache__/
 # Local Netlify folder
 .netlify

@@ -25,7 +25,6 @@ dependencies = [
     # Image rendering
     "kaleido>=1.0",  # v1+ requires Chrome
     "pillow>=10.0",
-    "selenium>=4.15",
 
     # Statistical tools
     "statsmodels>=0.14",
