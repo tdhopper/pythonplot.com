@@ -39,7 +39,7 @@ By Tim Hopper:
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
-[![Build Status](https://travis-ci.org/tdhopper/pythonplot.com.svg?branch=master)](https://travis-ci.org/tdhopper/pythonplot.com)
+[![Build Status](https://github.com/tdhopper/pythonplot.com/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/tdhopper/pythonplot.com/actions/workflows/deploy.yml)
 
 ## An Introduction to Python Plotting for Exploratory Data Analysis
 
