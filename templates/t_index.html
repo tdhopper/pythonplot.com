@@ -120,11 +120,10 @@
           <div class="card mb-4">
             <div class="card-header">
               <h3 class="card-title mb-1">{{ name }}<a class="anchor-link" href="#{{ slug }}" title="Link to {{ name }}" aria-label="Link to {{ name }}">#</a></h3>
-              <ul class="nav nav-tabs card-header-tabs">
+              <ul class="nav nav-pills card-header-pills library-pills">
                 {% for plot in items %}
                 <li class="nav-item">
-                  <a class="nav-link {% if loop.index0 == 0 %} active{% endif %}" data-toggle="tab" href="#{{ slug }}{{ plot['package-slug'] }}" role="tab">   {{ plot['package'] }}
-                  </a>
+                  <a class="nav-link{% if loop.index0 == 0 %} active{% endif %}" data-toggle="tab" href="#{{ slug }}{{ plot['package-slug'] }}" role="tab">{{ plot['package'] }}</a>
                 </li>
                 {% endfor %}
               </ul>

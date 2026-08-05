@@ -26,7 +26,7 @@ packages = {
     "plotnine": "plotnine",
     "lets-plot": "lets-plot",
     "plotly": "plotly",
-    "hvplot": "hvplot (Bokeh)",
+    "hvplot": "hvPlot (Bokeh)",
     "altair": "Altair",
     "ggplot": "ggplot2 (R)",
 }
