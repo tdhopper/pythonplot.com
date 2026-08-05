@@ -3,17 +3,18 @@ from collections import defaultdict
 
 defined_plots = {
     "bar-counts": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "dodged-bar-chart": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "scatter-plot": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "scatter-plot-with-colors": [
         "matplotlib",
         "seaborn",
+        "seaborn-objects",
         "plotnine",
         "lets-plot",
         "ggplot",
@@ -21,13 +22,13 @@ defined_plots = {
         "altair",
     ],
     "scatter-plot-with-facet": [
-        "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "seaborn", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "scatter-plot-with-facets": [
-        "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "seaborn", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "scatter-plot-with-size": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "scatter-with-regression": [
         "seaborn", "plotnine", "lets-plot", "ggplot", "plotly",
@@ -35,6 +36,7 @@ defined_plots = {
     "simple-histogram": [
         "pandas",
         "matplotlib",
+        "seaborn-objects",
         "plotnine",
         "lets-plot",
         "ggplot",
@@ -42,16 +44,23 @@ defined_plots = {
         "altair",
     ],
     "stacked-bar-chart": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "stacked-kde": [
-        "pandas", "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas",
+        "seaborn",
+        "seaborn-objects",
+        "plotnine",
+        "lets-plot",
+        "ggplot",
+        "plotly",
+        "altair",
     ],
     "stacked-smooth-line-and-scatter": [
         "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "timeseries": [
-        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
 }
 
