@@ -34,6 +34,7 @@ packages = {
 names = {
     "bar-counts": "Bar Chart",
     "simple-histogram": "Histogram",
+    "box-plot": "Box Plot",
     "scatter-plot": "Scatter Plot",
     "timeseries": "Time Series",
     "scatter-plot-with-colors": "Scatter Plot with Faceted with Color",
@@ -45,6 +46,7 @@ names = {
     "stacked-bar-chart": "Stacked Bar Chart",
     "dodged-bar-chart": "Dodged Bar Chart",
     "stacked-kde": "Stacked KDE Plot",
+    "heatmap": "Heatmap",
 }
 
 with open("INTRO.md", "r") as f:
