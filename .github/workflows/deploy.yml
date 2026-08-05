@@ -43,33 +43,21 @@ jobs:
       - name: Render site
         run: uv run python render.py Examples.build.ipynb
 
-      - name: Deploy to Netlify (Production)
+      - name: Deploy to Cloudflare Pages (Production)
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3
+        uses: cloudflare/wrangler-action@v3
         with:
-          publish-dir: ./web
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions - ${{ github.event.head_commit.message }}"
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy web --project-name=pythonplot --branch=main
 
-      - name: Deploy to Netlify (Preview)
+      - name: Deploy to Cloudflare Pages (Preview)
         if: github.ref != 'refs/heads/master'
-        uses: nwtgck/actions-netlify@v3
+        uses: cloudflare/wrangler-action@v3
         with:
-          publish-dir: ./web
-          production-deploy: false
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Preview deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: false
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy web --project-name=pythonplot --branch=${{ github.head_ref || github.ref_name }}
 
       - name: Upload build artifacts
         if: always()

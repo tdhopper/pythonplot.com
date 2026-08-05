@@ -128,6 +128,11 @@ GitHub Actions (`.github/workflows/deploy.yml`) on every push:
 3. `uv run kaleido_get_chrome`
 4. Run pytest
 5. Execute notebook and render site
-6. Deploy to Netlify: production on master pushes, preview otherwise
+6. Deploy `web/` to Cloudflare Pages (project `pythonplot`, direct upload via `cloudflare/wrangler-action`)
 
-**Required Secrets:** `NETLIFY_AUTH_TOKEN`, `NETLIFY_SITE_ID`
+Master pushes deploy with `--branch=main`, which the Cloudflare project treats as its
+production branch (pythonplot.com, www.pythonplot.com). Every other branch deploys with
+its own branch name, producing a preview URL.
+
+**Required Secrets:** `CLOUDFLARE_API_TOKEN` (needs the Cloudflare Pages: Edit
+permission), `CLOUDFLARE_ACCOUNT_ID`

@@ -4,5 +4,3 @@ Examples.*.ipynb
 .setup_done
 .venv/
 __pycache__/
-# Local Netlify folder
-.netlify
