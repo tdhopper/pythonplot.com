@@ -4,12 +4,15 @@ from collections import defaultdict
 defined_plots = {
     "bar-counts": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "dodged-bar-chart": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "scatter-plot": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "scatter-plot-with-colors": [
         "matplotlib",
@@ -20,15 +23,19 @@ defined_plots = {
         "ggplot",
         "plotly",
         "altair",
+        "hvplot",
     ],
     "scatter-plot-with-facet": [
         "seaborn", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "scatter-plot-with-facets": [
         "seaborn", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "scatter-plot-with-size": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "scatter-with-regression": [
         "seaborn", "plotnine", "lets-plot", "ggplot", "plotly",
@@ -42,9 +49,11 @@ defined_plots = {
         "ggplot",
         "plotly",
         "altair",
+        "hvplot",
     ],
     "stacked-bar-chart": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
     "stacked-kde": [
         "pandas",
@@ -55,12 +64,14 @@ defined_plots = {
         "ggplot",
         "plotly",
         "altair",
+        "hvplot",
     ],
     "stacked-smooth-line-and-scatter": [
         "plotnine", "lets-plot", "ggplot", "plotly", "altair",
     ],
     "timeseries": [
         "pandas", "seaborn-objects", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+        "hvplot",
     ],
 }
 

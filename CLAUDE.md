@@ -95,6 +95,7 @@ All plots are rendered to static PNG images inside the executed notebook:
 - **Plotly**: `pio.renderers.default = "png"` with Kaleido (needs Chrome; `uv run kaleido_get_chrome`)
 - **Altair**: `alt.renderers.enable("png")` with vl-convert-python (set in the notebook's first cell — do not remove)
 - **R/ggplot2**: rpy2 against the system R installation (`%%R` cell magic)
+- **Lets-Plot** and **hvPlot/Bokeh**: an `image/png` IPython formatter registered in the notebook's first cell. Bokeh has no headless renderer, so hvPlot figures are screenshotted through Selenium driving the same Chrome for Testing build Kaleido downloads; Selenium Manager fetches the matching chromedriver on first use (needs network).
 
 ## Adding New Plots
 
