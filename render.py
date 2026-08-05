@@ -11,6 +11,8 @@ import logging
 import subprocess
 import base64
 import hashlib
+import io
+from PIL import Image
 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -49,18 +51,29 @@ with open("INTRO.md", "r") as f:
     intro = f.read()
 
 
+WEBP_QUALITY = 85
+
+
 def image_from_cell(cell):
+    """Save the cell's PNG output as WebP and return its path and pixel size.
+
+    The filename stays the MD5 of the base64 PNG, so a plot that hasn't changed
+    keeps its URL. The pixel size lets the template declare width/height, which
+    reserves layout space for the lazily loaded images.
+    """
     try:
         for c in cell['outputs']:
             if 'data' in c and 'image/png' in c['data']:
                 base64_img = c['data']['image/png'].replace("\n", "").strip()
                 filename = hashlib.md5()
                 filename.update(base64_img.encode('ascii'))
-                web_path = "/img/plots/{}.png".format(filename.hexdigest())
+                web_path = "/img/plots/{}.webp".format(filename.hexdigest())
                 full_path = "web" + web_path
-                with open(full_path, "wb") as fh:
-                    fh.write(base64.b64decode(base64_img))
-                return web_path
+                image = Image.open(io.BytesIO(base64.b64decode(base64_img)))
+                if image.mode not in ("RGB", "RGBA"):
+                    image = image.convert("RGBA")
+                image.save(full_path, "WEBP", quality=WEBP_QUALITY, method=6)
+                return {"path": web_path, "width": image.width, "height": image.height}
     except KeyError as e:
         logging.error("Can't find image in cell: %s", cell['source'])
         raise e
@@ -145,7 +158,9 @@ def extract_cells(path):
             "cell_num": cell_num,
             "package": packages.get(tags["package"], tags["package"]),
             "package-slug": tags['package'],
-            "image": image,
+            "image": image["path"],
+            "image-width": image["width"],
+            "image-height": image["height"],
             "content": source,
             "comment": md.convert(comment) or None,
         })
