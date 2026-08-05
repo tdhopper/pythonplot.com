@@ -1203,6 +1203,43 @@ wheels = [
 ]
 
 [[package]]
+name = "lets-plot"
+version = "4.11.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "palettable" },
+    { name = "pillow" },
+    { name = "pypng" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/50/e8/df04b5b833c8fa89cbc7bcb5478166066c988fc302b050e8d58dc1bbf998/lets_plot-4.11.0-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:2114bdcbe73aafa1512779a3cd064e96b50fee37fca7ed78018aeaef224c8bc7", size = 7313995, upload-time = "2026-06-30T13:22:58.181Z" },
+    { url = "https://files.pythonhosted.org/packages/82/3f/38578337f31bfc0491470023b0bc4514cf043880474d7d0eb8ccdc96ff73/lets_plot-4.11.0-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:b5b72268fbce91b21cebd75028b79a9766584a79a4f2b278cedd5c3fcd9c13e8", size = 6861264, upload-time = "2026-06-30T13:22:48.03Z" },
+    { url = "https://files.pythonhosted.org/packages/46/30/410281f6bd2ba7104308aeac08ae8472c0cc0812bd7ea934de2878453a3c/lets_plot-4.11.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:986fb279ca3e5aea05687374be97fb82a227814039d406ffc076ea71ff6fdcb1", size = 7175380, upload-time = "2026-06-30T13:22:46.201Z" },
+    { url = "https://files.pythonhosted.org/packages/ae/56/e65ca7899579ec2a29cb4ee29f5ccadaefa7490cec2a056a77d97182ffa5/lets_plot-4.11.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:7a36f999221513eb6d36fb7120c8b44bded1ff0138a3e5947a10560da62e9070", size = 7890925, upload-time = "2026-06-30T13:22:51.427Z" },
+    { url = "https://files.pythonhosted.org/packages/96/d7/67adeaa76d6beabe30b359a83d99dcf793a71448055b9b1cbdad116d7504/lets_plot-4.11.0-cp311-cp311-win_amd64.whl", hash = "sha256:212d140eda98138f1de4af2311c251b4cf6d71ccf956dd6d4976eb64eebd571d", size = 6599864, upload-time = "2026-06-30T13:22:49.658Z" },
+    { url = "https://files.pythonhosted.org/packages/2c/78/d65586bcf7b58fe39aa06f945331a6d22a4663402284eddf6517a1cc48b6/lets_plot-4.11.0-cp312-cp312-macosx_10_15_x86_64.whl", hash = "sha256:33e0e85e20e3d15e4434cc4766a84369d0142e03fb21ddc15cca2aab3956d5aa", size = 7314019, upload-time = "2026-06-30T13:23:22.554Z" },
+    { url = "https://files.pythonhosted.org/packages/77/f1/da86eef569031973cfccc707d60e171f37f2126af1b8d5246a9e033310a4/lets_plot-4.11.0-cp312-cp312-macosx_12_0_arm64.whl", hash = "sha256:2d04baafc53cc928710a9521237644f6e09f5c19586958977045eebdf0951621", size = 6861235, upload-time = "2026-06-30T13:22:56.624Z" },
+    { url = "https://files.pythonhosted.org/packages/0e/ed/0acbc30b86ceeb886e04c30a8ba04a40b9e0808114f0dfc3cf077e7b6c01/lets_plot-4.11.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:a162126d8199f1470f86a053d3c7f604baae2cbe7b7fea671f60d725e9f24117", size = 7175665, upload-time = "2026-06-30T13:22:53.151Z" },
+    { url = "https://files.pythonhosted.org/packages/5a/97/4aec890acdd82eb1bfc0b39a7e93efe3740e1ae1cfd373e6960b2a2ed8c7/lets_plot-4.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:130c591553e0aa54d1340935c0c1ff9aec5a42b2a8f10f3b5bface8a88e08f82", size = 7890857, upload-time = "2026-06-30T13:22:36.596Z" },
+    { url = "https://files.pythonhosted.org/packages/44/58/52f4e3e765c12e683e47dc95935af665c97261c015eaacbcf89722aff07d/lets_plot-4.11.0-cp312-cp312-win_amd64.whl", hash = "sha256:bdf2b6bad57763a834c745a8e845becd8e19e40c6cc0421868ed0067b7ae31fb", size = 6600021, upload-time = "2026-06-30T13:22:54.876Z" },
+    { url = "https://files.pythonhosted.org/packages/3c/2a/47e444e21ca3070fd8615c70ac2b93a91617fac9a6e5e13c9f73b6f8fe6b/lets_plot-4.11.0-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:ed10c01b1a7dd077a95522bd7ae2d84b05bd7331fd8f433ae9bcaa7b7bf1bb62", size = 7314018, upload-time = "2026-06-30T13:22:39.067Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/bc/7edb27519b1df5a31578f1049da0409df7294cdc10bf95c79a03444858bd/lets_plot-4.11.0-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:235bdbbca1245948b2cc97834ddd03d3c672701557bd2633a272975e63dc80c4", size = 6861236, upload-time = "2026-06-30T13:23:18.034Z" },
+    { url = "https://files.pythonhosted.org/packages/28/5a/99a5223b29c76323fb3f0ac7aa9103771d06b0d0abb5bdf059327fdbfe0f/lets_plot-4.11.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:3061176d3c940425878262b4f3d86bd4c22aa28f491c8a4b251b926ec0a18428", size = 7175635, upload-time = "2026-06-30T13:23:10.877Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/91/dd3b3def5958de3705a3b571c6a667f165fc44da41b3b6122fd7de0993bf/lets_plot-4.11.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:455101b29f0110b9aa22a5148c8ebd79c1be545e20592143e9792ca8e7a5ffd7", size = 7890804, upload-time = "2026-06-30T13:22:44.307Z" },
+    { url = "https://files.pythonhosted.org/packages/9e/f1/7546add6ac86af06047a966b5209ef2e28fd6bdd15f8a67fa4be1efd08ef/lets_plot-4.11.0-cp313-cp313-win_amd64.whl", hash = "sha256:fbc89599b1bdd22611080bce3566aae9e15ed04702636bf1d8cc3cec140f9ac2", size = 6599865, upload-time = "2026-06-30T13:23:05.107Z" },
+    { url = "https://files.pythonhosted.org/packages/51/6d/c6d3f068b5e86b7e92dc4f4ccc0c422c10ea6be898478032bf92a7ea97e5/lets_plot-4.11.0-cp314-cp314-macosx_11_0_x86_64.whl", hash = "sha256:b5e4c0949ee9729a59353fac2d74aa48c813de2a6cfbf5762521f911e6b05884", size = 7379628, upload-time = "2026-06-30T13:23:14.47Z" },
+    { url = "https://files.pythonhosted.org/packages/4a/22/61fe4efb8e9cef175dd30813648e883345fed649a7b68f4be71fcb2f7cbc/lets_plot-4.11.0-cp314-cp314-macosx_12_0_arm64.whl", hash = "sha256:d53da88c0e2448c811f44c6f3a71fba3b48ea471f6114467da2472ab09252146", size = 6861239, upload-time = "2026-06-30T13:23:26.232Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/43/e516ec41512f69153f9eb33da4b65067fb174bcc939a4a58bf5102c73473/lets_plot-4.11.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:681e4d11f539615122355f53ce910844de211c44654bb0a0aec9c204b36a1944", size = 7175688, upload-time = "2026-06-30T13:23:01.444Z" },
+    { url = "https://files.pythonhosted.org/packages/81/0d/0066c34f0a1244cd8a13e7362486041c34289efb1ee822a64f7c3ce384f1/lets_plot-4.11.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:015f93dab1a4358d3a034bffff21ea16725ffb79d9fc113e4ff58d4ba0a13e91", size = 7890868, upload-time = "2026-06-30T13:23:06.794Z" },
+    { url = "https://files.pythonhosted.org/packages/d5/30/e812334963aa9502e25af56e73abd2225af0e6fadc4db1e893374e9b1f10/lets_plot-4.11.0-cp314-cp314-win_amd64.whl", hash = "sha256:2849191780092a3ee99cdcc1fd7733665c39900cc1872cf66b1a5f8779c53afe", size = 6599881, upload-time = "2026-06-30T13:23:03.241Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/84/9921fb975beae6d403d2ae8d9fa0e68d608a8d75c14e0c41c1a624d50bc4/lets_plot-4.11.0-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:060602fbe92eefa3151b0aaa6684e3d420652220dad771752cb4821a9cac1aa3", size = 6917001, upload-time = "2026-06-30T13:23:24.403Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/9a/ea1deafd231061e2cce199085fbe37dde9ecc9810977dfb3cd33066ea01f/lets_plot-4.11.0-cp314-cp314t-macosx_11_0_x86_64.whl", hash = "sha256:d5f8b1151266c41c0cd8b931c7a59a6d231b6892da58fbfcbee793f2052beee6", size = 7379483, upload-time = "2026-06-30T13:23:16.212Z" },
+    { url = "https://files.pythonhosted.org/packages/97/9a/52d72f65db8d12bc94be0bf085dec94f3198e871d0c09ea9af9cfbc88f6f/lets_plot-4.11.0-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:2e5155eefc9829fe8775cc75a5ead0034a9673ba88813f11d8737594ba1253ee", size = 7177030, upload-time = "2026-06-30T13:23:20.6Z" },
+    { url = "https://files.pythonhosted.org/packages/7a/2d/e8852858e64942e10438ca0235ea9a0d6064e17ef48e522d444681c62836/lets_plot-4.11.0-cp314-cp314t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:3f0925f7f9a7293115385af77452b9d03bfab64e8fc3bb1b84d5101ec0d339e8", size = 7890954, upload-time = "2026-06-30T13:22:42.308Z" },
+    { url = "https://files.pythonhosted.org/packages/d9/21/f6fa7129af18153707ffe23aa7a89adc20225e7aa35976f0424e13c6940c/lets_plot-4.11.0-cp314-cp314t-win_amd64.whl", hash = "sha256:366410ddc5e063ca4c1685afd7c0b8f8dcd20946d3abc63d1024c3ef4f706992", size = 6599801, upload-time = "2026-06-30T13:22:40.752Z" },
+]
+
+[[package]]
 name = "logistro"
 version = "2.0.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1729,6 +1766,15 @@ wheels = [
 ]
 
 [[package]]
+name = "palettable"
+version = "3.3.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/dc/3d/a5854d60850485bff12f28abfe0e17f503e866763bed61aed4990b604530/palettable-3.3.3.tar.gz", hash = "sha256:094dd7d9a5fc1cca4854773e5c1fc6a315b33bd5b3a8f47064928facaf0490a8", size = 106639, upload-time = "2023-04-19T23:13:35.864Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cf/f7/3367feadd4ab56783b0971c9b7edfbdd68e0c70ce877949a5dd2117ed4a0/palettable-3.3.3-py2.py3-none-any.whl", hash = "sha256:74e9e7d7fe5a9be065e02397558ed1777b2df0b793a6f4ce1a5ee74f74fb0caa", size = 332251, upload-time = "2023-04-19T23:13:33.996Z" },
+]
+
+[[package]]
 name = "pandas"
 version = "3.0.5"
 source = { registry = "https://pypi.org/simple" }
@@ -2087,6 +2133,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pypng"
+version = "0.20220715.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/cd/112f092ec27cca83e0516de0a3368dbd9128c187fb6b52aaaa7cde39c96d/pypng-0.20220715.0.tar.gz", hash = "sha256:739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1", size = 128992, upload-time = "2022-07-15T14:11:05.301Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3e/b9/3766cc361d93edb2ce81e2e1f87dd98f314d7d513877a342d31b30741680/pypng-0.20220715.0-py3-none-any.whl", hash = "sha256:4a43e969b8f5aaafb2a415536c1a8ec7e341cd6a3f957fd5b5f32a4cfeed902c", size = 58057, upload-time = "2022-07-15T14:11:03.713Z" },
+]
+
+[[package]]
 name = "pytest"
 version = "9.1.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2135,6 +2190,7 @@ dependencies = [
     { name = "jinja2-highlight" },
     { name = "jupyter" },
     { name = "kaleido" },
+    { name = "lets-plot" },
     { name = "markdown" },
     { name = "matplotlib" },
     { name = "notebook" },
@@ -2164,6 +2220,7 @@ requires-dist = [
     { name = "jinja2-highlight", specifier = ">=0.6" },
     { name = "jupyter", specifier = ">=1.0" },
     { name = "kaleido", specifier = ">=1.0" },
+    { name = "lets-plot", specifier = ">=4.11" },
     { name = "markdown", specifier = ">=3.5" },
     { name = "matplotlib", specifier = ">=3.7" },
     { name = "notebook", specifier = ">=7.0" },
