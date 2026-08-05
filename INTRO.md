@@ -33,7 +33,7 @@ There are several tools that can make the kinds of plots described here. At pres
 
 "[Lets-Plot](https://lets-plot.org/ "Lets-Plot: an open-source plotting library for statistical data") is an open-source plotting library for statistical data," written by JetBrains and modeled on the grammar of graphics. Its Python API tracks ggplot2 closely enough that most of the examples below translate line for line. I provide Lets-Plot examples rendered as static images.
 
-"[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation."
+"[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation." The Bokeh examples below go through [hvPlot](https://hvplot.holoviz.org/), which adds an `.hvplot` accessor to data frames that deliberately echoes the pandas `.plot` API, so most of these plots are one call with a few keyword arguments. hvPlot has no regression line or loess smoother, so those two examples are missing. I provide hvPlot examples rendered as static images.
 
 "[bqplot](https://github.com/bloomberg/bqplot) is a Grammar of Graphics-based interactive plotting framework for the Jupyter notebook."
 

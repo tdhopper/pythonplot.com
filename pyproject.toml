@@ -22,10 +22,12 @@ dependencies = [
     "plotly>=5.24",
     "altair>=5.0",
     "vl-convert-python>=1.0",  # Required for Altair PNG export
+    "hvplot>=0.12",  # Bokeh via the pandas .hvplot accessor
 
     # Image rendering
     "kaleido>=1.0",  # v1+ requires Chrome
     "pillow>=10.0",
+    "selenium>=4.11",  # Required for Bokeh PNG export
 
     # Statistical tools
     "statsmodels>=0.14",
