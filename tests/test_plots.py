@@ -2,33 +2,57 @@ import json
 from collections import defaultdict
 
 defined_plots = {
-    "bar-counts": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
-    "dodged-bar-chart": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
-    "scatter-plot": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
+    "bar-counts": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "dodged-bar-chart": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "scatter-plot": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
     "scatter-plot-with-colors": [
         "matplotlib",
         "seaborn",
         "plotnine",
+        "lets-plot",
         "ggplot",
         "plotly",
         "altair",
     ],
-    "scatter-plot-with-facet": ["seaborn", "plotnine", "ggplot", "plotly", "altair",],
-    "scatter-plot-with-facets": ["seaborn", "plotnine", "ggplot", "plotly", "altair",],
-    "scatter-plot-with-size": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
-    "scatter-with-regression": ["seaborn", "plotnine", "ggplot", "plotly",],
+    "scatter-plot-with-facet": [
+        "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "scatter-plot-with-facets": [
+        "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "scatter-plot-with-size": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "scatter-with-regression": [
+        "seaborn", "plotnine", "lets-plot", "ggplot", "plotly",
+    ],
     "simple-histogram": [
         "pandas",
         "matplotlib",
         "plotnine",
+        "lets-plot",
         "ggplot",
         "plotly",
         "altair",
     ],
-    "stacked-bar-chart": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
-    "stacked-kde": ["pandas", "seaborn", "plotnine", "ggplot", "plotly", "altair",],
-    "stacked-smooth-line-and-scatter": ["plotnine", "ggplot", "plotly", "altair",],
-    "timeseries": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
+    "stacked-bar-chart": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "stacked-kde": [
+        "pandas", "seaborn", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "stacked-smooth-line-and-scatter": [
+        "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
+    "timeseries": [
+        "pandas", "plotnine", "lets-plot", "ggplot", "plotly", "altair",
+    ],
 }
 
 

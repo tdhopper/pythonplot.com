@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-pythonplot.com is a static website that provides a visual comparison of different Python plotting libraries (pandas, matplotlib, seaborn, plotnine, plotly, altair) and R's ggplot2 for exploratory data analysis. It serves as a "Rosetta Stone" showing how to create the same plots across different libraries.
+pythonplot.com is a static website that provides a visual comparison of different Python plotting libraries (pandas, matplotlib, seaborn, plotnine, lets-plot, plotly, altair) and R's ggplot2 for exploratory data analysis. It serves as a "Rosetta Stone" showing how to create the same plots across different libraries.
 
 ## Architecture
 
@@ -115,7 +115,7 @@ All plots are rendered to static PNG images inside the executed notebook:
 
 ## Dependencies
 
-Python dependencies are declared in `pyproject.toml` and locked in `uv.lock` (committed). Key libraries: pandas, matplotlib, seaborn, plotnine, plotly (+kaleido), altair (+vl-convert-python), statsmodels, rpy2, Jinja2 with jinja2-highlight.
+Python dependencies are declared in `pyproject.toml` and locked in `uv.lock` (committed). Key libraries: pandas, matplotlib, seaborn, plotnine, lets-plot, plotly (+kaleido), altair (+vl-convert-python), statsmodels, rpy2, Jinja2 with jinja2-highlight.
 
 R (system install) with ggplot2 and mgcv, installed by `setup_r.sh`.
 

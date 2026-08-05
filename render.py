@@ -21,6 +21,7 @@ packages = {
     "matplotlib": "Matplotlib",
     "seaborn": "Seaborn",
     "plotnine": "plotnine",
+    "lets-plot": "lets-plot",
     "plotly": "plotly",
     "altair": "Altair",
     "ggplot": "ggplot2 (R)",

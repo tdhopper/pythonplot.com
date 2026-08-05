@@ -29,6 +29,8 @@ There are several tools that can make the kinds of plots described here. At pres
 
 "[plotly](https://plot.ly/ "Plotly - Make charts and dashboards online")'s Python graphing library makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts." I provide plotly examples rendered as static images.
 
+"[Lets-Plot](https://lets-plot.org/ "Lets-Plot: an open-source plotting library for statistical data") is an open-source plotting library for statistical data," written by JetBrains and modeled on the grammar of graphics. Its Python API tracks ggplot2 closely enough that most of the examples below translate line for line. I provide Lets-Plot examples rendered as static images.
+
 "[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation."
 
 "[bqplot](https://github.com/bloomberg/bqplot) is a Grammar of Graphics-based interactive plotting framework for the Jupyter notebook."
