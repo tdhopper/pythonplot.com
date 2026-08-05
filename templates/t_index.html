@@ -4,20 +4,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Interactive comparison of Python plotting libraries for exploratory data analysis. Examples of using Pandas plotting, plotnine, Seaborn, and Matplotlib. Includes comparison with ggplot2 for R.">
+    <meta name="description" content="Side-by-side comparison of Python plotting libraries for exploratory data analysis: pandas, Matplotlib, Seaborn, plotnine, Lets-Plot, plotly, hvPlot, and Altair, with R's ggplot2 for reference.">
     <meta name="author" content="Timothy Hopper">
 
     <title>Python Plotting for Exploratory Analysis</title>
 
+    <link rel="canonical" href="https://pythonplot.com/">
+
     <meta property="og:title" content="Python Plotting for Exploratory Analysis" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://pythonplot.com" />
-    <meta property="og:image" content="http://pythonplot.com/img/cover.png" />
+    <meta property="og:site_name" content="pythonplot.com" />
+    <meta property="og:url" content="https://pythonplot.com/" />
+    <meta property="og:image" content="https://pythonplot.com/img/banner.png" />
+    <meta property="og:image:alt" content="The same plot drawn with several Python plotting libraries side by side." />
     <meta property="og:description"
-      content="Interactive comparison of Python plotting libraries for exploratory data analysis. Examples of using Pandas plotting, plotnine, Seaborn, and Matplotlib. Includes comparison with ggplot2 for R." />
-    <meta name="twitter:card" content="summary" />
+      content="Side-by-side comparison of Python plotting libraries for exploratory data analysis: pandas, Matplotlib, Seaborn, plotnine, Lets-Plot, plotly, hvPlot, and Altair, with R's ggplot2 for reference." />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@tdhopper" />
     <meta name="twitter:creator" content="@tdhopper" />
+    <meta name="twitter:title" content="Python Plotting for Exploratory Analysis" />
+    <meta name="twitter:description"
+      content="Side-by-side comparison of Python plotting libraries for exploratory data analysis: pandas, Matplotlib, Seaborn, plotnine, Lets-Plot, plotly, hvPlot, and Altair, with R's ggplot2 for reference." />
+    <meta name="twitter:image" content="https://pythonplot.com/img/banner.png" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/img/ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/img/ico/apple-icon-60x60.png">
@@ -107,10 +115,11 @@
       <hr>
       <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
+        {% set outer_loop = loop %}
         <section id="{{ slug }}">
           <div class="card mb-4">
             <div class="card-header">
-              <h3 class="card-title mb-1"><a href="#{{ slug }}"><i class="fa fa-link" aria-hidden="true"></i></a> {{ name }}</h3>
+              <h3 class="card-title mb-1">{{ name }}<a class="anchor-link" href="#{{ slug }}" title="Link to {{ name }}" aria-label="Link to {{ name }}">#</a></h3>
               <ul class="nav nav-tabs card-header-tabs">
                 {% for plot in items %}
                 <li class="nav-item">
@@ -124,16 +133,20 @@
             <div class="card-block p-0">
               <div class="tab-content">
                 {% for plot in items %}
+                  {% set eager = outer_loop.first and loop.first %}
                   <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ slug }}{{ plot['package-slug'] }}" role="tabpanel">
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-lg-6 col-xs-12 p-lg-0">
                           <a href="{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
-                            <img src="{{ plot['image'] }}" class="img-fluid">
+                            <img src="{{ plot['image'] }}" class="img-fluid" alt="{{ name }} drawn with {{ plot['package'] }}" width="{{ plot['image-width'] }}" height="{{ plot['image-height'] }}" decoding="async"{% if not eager %} loading="lazy"{% endif %}>
                           </a>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
-                          <h6 class="text-muted mb-0 pb-0 pt-3 px-3">Code:</h6>
+                          <div class="code-head d-flex justify-content-between align-items-center pt-3 px-3">
+                            <h6 class="text-muted mb-0 pb-0">Code:</h6>
+                            <button type="button" class="copy-btn" data-copy aria-label="Copy code for {{ name }} with {{ plot['package'] }}">Copy</button>
+                          </div>
                           {% if plot['package'] == "ggplot" %}
                             <code class="p-0 mb-auto">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
                           {% else %}
@@ -179,7 +192,30 @@
           event.preventDefault();
           $(this).ekkoLightbox({alwaysShowClose: true});
       });
-      $.bigfoot();
+    </script>
+
+    <script type="text/javascript">
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-copy]');
+        if (!button) { return; }
+        var panel = button.closest('.right-col');
+        var code = panel && panel.querySelector('code');
+        if (!code) { return; }
+        var text = code.textContent.replace(/\s+$/, '');
+        var done = function (label) {
+          button.textContent = label;
+          setTimeout(function () { button.textContent = 'Copy'; }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            done('Copied');
+          }, function () {
+            done('Press ⌘C');
+          });
+        } else {
+          done('Press ⌘C');
+        }
+      });
     </script>
   </body>
 </html>
