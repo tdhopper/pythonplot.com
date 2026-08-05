@@ -14,11 +14,11 @@ Put the Matplotlib and ggplot2 versions of the two-variable faceted scatter plot
 
 #### Matplotlib-Based Libraries
 
-[Pandas plotting](https://pandas.pydata.org/docs/user_guide/visualization.html "pandas user guide: Chart Visualization") provides "the basics ... to easily create decent looking plots" from data frames. That is about 70% of what I do day-to-day. It has no faceting, no categorical color mapping, and no smoothing, so five of the examples below have no pandas column.
+[Pandas plotting](https://pandas.pydata.org/docs/user_guide/visualization.html "pandas user guide: Chart Visualization") provides "the basics ... to easily create decent looking plots" from data frames. That is about 70% of what I do day-to-day. It has no faceting, no categorical color mapping, no smoothing, and no heatmap, so six of the examples below have no pandas column.
 
 Seaborn calls itself "[statistical data visualization](https://seaborn.pydata.org/ "seaborn: statistical data visualization")." Its classic interface is a set of named functions (`histplot`, `scatterplot`, `countplot`, `lmplot`, `kdeplot`) plus [FacetGrid](http://seaborn.pydata.org/tutorial/axis_grids.html), which I use for faceting more than anything else in the library. It covers every plot below, once you know which function to reach for.
 
-Seaborn 0.12 added [seaborn.objects](https://seaborn.pydata.org/tutorial/objects_interface.html), a second interface built on the grammar of graphics. It composes a plot from marks and statistical transforms instead of dispatching to a named plotting function. The interface has no loess smoother and no regression confidence band, so those two examples are missing.
+Seaborn 0.12 added [seaborn.objects](https://seaborn.pydata.org/tutorial/objects_interface.html), a second interface built on the grammar of graphics. It composes a plot from marks and statistical transforms instead of dispatching to a named plotting function. The interface has no loess smoother, no regression confidence band, and neither a box-plot nor a rectangle mark, so four of the examples are missing.
 
 "[plotnine](https://plotnine.org/) is a data visualization package for Python based on the grammar of graphics." It tracks ggplot2 closely enough that most R code translates line for line, down to the `+` for layering. I reach for it when I want ggplot2 semantics without leaving Python.
 
