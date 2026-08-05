@@ -20,6 +20,7 @@ packages = {
     "pandas": "Pandas",
     "matplotlib": "Matplotlib",
     "seaborn": "Seaborn",
+    "seaborn-objects": "seaborn.objects",
     "plotnine": "plotnine",
     "lets-plot": "lets-plot",
     "plotly": "plotly",
