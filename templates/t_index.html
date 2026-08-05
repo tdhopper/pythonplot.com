@@ -111,7 +111,7 @@
         <section id="{{ slug }}">
           <div class="card mb-4">
             <div class="card-header">
-              <h3 class="card-title mb-1"><a href="#{{ slug }}"><i class="fa fa-link" aria-hidden="true"></i></a> {{ name }}</h3>
+              <h3 class="card-title mb-1">{{ name }}<a class="anchor-link" href="#{{ slug }}" title="Link to {{ name }}" aria-label="Link to {{ name }}">#</a></h3>
               <ul class="nav nav-tabs card-header-tabs">
                 {% for plot in items %}
                 <li class="nav-item">

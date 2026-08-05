@@ -27,6 +27,22 @@ table {
     font-family: monospace;
 }
 
+/* Subtle deep-link anchor next to each plot heading. */
+.anchor-link {
+    color: #adb5bd;
+    font-weight: 400;
+    margin-left: .4rem;
+    opacity: .45;
+    text-decoration: none;
+}
+
+.anchor-link:hover,
+.anchor-link:focus {
+    color: #495057;
+    opacity: 1;
+    text-decoration: none;
+}
+
 /* Copy button sitting in the dark code panel header. */
 .copy-btn {
     background: transparent;
