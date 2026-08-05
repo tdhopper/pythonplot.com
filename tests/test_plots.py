@@ -1,4 +1,5 @@
-import render
+import json
+from collections import defaultdict
 
 defined_plots = {
     "bar-counts": ["pandas", "plotnine", "ggplot", "plotly", "altair",],
@@ -32,7 +33,15 @@ defined_plots = {
 
 
 def test_exist():
-    plots = render.extract_cells("Examples.ipynb")
-    for name, slug in plots:
-        names = [d["package-slug"] for d in plots[(name, slug)]]
-        assert set(names) == set(defined_plots[slug])
+    with open("Examples.ipynb") as f:
+        nb = json.load(f)
+
+    found = defaultdict(set)
+    for cell in nb["cells"]:
+        tags = set(cell["metadata"].get("tags") or [])
+        if "ex" not in tags:
+            continue
+        parsed = {t.split(":")[0]: t.split(":")[1] for t in tags if ":" in t}
+        found[parsed["name"]].add(parsed["package"])
+
+    assert {k: set(v) for k, v in defined_plots.items()} == dict(found)

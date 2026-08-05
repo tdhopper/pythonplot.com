@@ -39,7 +39,7 @@ By Tim Hopper:
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
-[![Build Status](https://travis-ci.org/tdhopper/pythonplot.com.svg?branch=master)](https://travis-ci.org/tdhopper/pythonplot.com)
+[![Build Status](https://github.com/tdhopper/pythonplot.com/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/tdhopper/pythonplot.com/actions/workflows/deploy.yml)
 
 ## An Introduction to Python Plotting for Exploratory Data Analysis
 
@@ -122,6 +122,6 @@ cd web && python -m http.server
 #### CI/CD
 
 The project uses GitHub Actions for continuous integration and deployment:
-- **Pushes to `master`**: Automatically deployed to production on Netlify
-- **Other branches**: Create preview deployments on Netlify
-- Requires secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`
+- **Pushes to `master`**: Deployed to production on the Cloudflare Pages project `pythonplot`
+- **Other branches**: Create preview deployments on Cloudflare Pages
+- Requires secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`
