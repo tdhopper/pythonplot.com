@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
 
     steps:
       - name: Checkout code
@@ -44,7 +46,7 @@ jobs:
         run: uv run python render.py Examples.build.ipynb
 
       - name: Deploy to Cloudflare Pages (Production)
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push' && env.HAS_CF_TOKEN == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -52,7 +54,7 @@ jobs:
           command: pages deploy web --project-name=pythonplot --branch=main
 
       - name: Deploy to Cloudflare Pages (Preview)
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/master' && env.HAS_CF_TOKEN == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
