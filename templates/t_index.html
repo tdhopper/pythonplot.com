@@ -82,7 +82,7 @@
 
     <div class="container">
 
-      <div class="row"><div class="col-xs-12 col-lg-6 col-md-8 offset-md-1 offset-lg-2">
+      <div class="row"><div class="col-12 col-lg-6 col-md-8 offset-md-1 offset-lg-2">
         <img class="img-fluid pb-4" src="/img/banner.png">
         <h1>Python Plotting for Exploratory Data Analysis</h1>
 
@@ -104,7 +104,7 @@
       </div>
       </div>
 
-      <div class="row"><div class="col-xs-12 col-lg-8 col-md-8 offset-md-1 offset-lg-2">
+      <div class="row"><div class="col-12 col-lg-8 col-md-8 offset-md-1 offset-lg-2">
         {% for name, table in data.items() %}
           <h5>{{ name }}</h5>
 
@@ -113,7 +113,7 @@
       </div></div>
 
       <hr>
-      <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
+      <div class="row mt-4" id="examples"><div class="col-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
         {% set outer_loop = loop %}
         <section id="{{ slug }}">
@@ -136,17 +136,17 @@
                   <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ slug }}{{ plot['package-slug'] }}" role="tabpanel">
                     <div class="container-fluid">
                       <div class="row">
-                        <div class="col-lg-6 col-xs-12 p-lg-0">
+                        <div class="col-lg-6 col-12 p-lg-0">
                           <a href="{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
                             <img src="{{ plot['image'] }}" class="img-fluid" alt="{{ name }} drawn with {{ plot['package'] }}" width="{{ plot['image-width'] }}" height="{{ plot['image-height'] }}" decoding="async"{% if not eager %} loading="lazy"{% endif %}>
                           </a>
                         </div>
-                        <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
+                        <div class="col-lg-6 col-12 p-0 right-col d-inline-flex flex-column">
                           <div class="code-head d-flex justify-content-between align-items-center pt-3 px-3">
                             <h6 class="text-muted mb-0 pb-0">Code:</h6>
                             <button type="button" class="copy-btn" data-copy aria-label="Copy code for {{ name }} with {{ plot['package'] }}">Copy</button>
                           </div>
-                          {% if plot['package'] == "ggplot" %}
+                          {% if plot['package-slug'] == "ggplot" %}
                             <code class="p-0 mb-auto">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
                           {% else %}
                             <code class="p-0 mb-auto">{% highlight 'python' %}{{ plot['content'] }}{% endhighlight %}</code>
