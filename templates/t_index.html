@@ -107,6 +107,7 @@
       <hr>
       <div class="row mt-4" id="examples"><div class="col-xs-12 col-md-10 offset-md-1">
         {% for (name, slug), items in plots.items() %}
+        {% set outer_loop = loop %}
         <section id="{{ slug }}">
           <div class="card mb-4">
             <div class="card-header">
@@ -124,12 +125,13 @@
             <div class="card-block p-0">
               <div class="tab-content">
                 {% for plot in items %}
+                  {% set eager = outer_loop.first and loop.first %}
                   <div class="tab-pane  {% if loop.index0 == 0 %} active{% endif %}" id="{{ slug }}{{ plot['package-slug'] }}" role="tabpanel">
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-lg-6 col-xs-12 p-lg-0">
                           <a href="{{ plot['image'] }}" data-toggle="lightbox" data-title="{{ name }} - {{ plot['package'] }}">
-                            <img src="{{ plot['image'] }}" class="img-fluid">
+                            <img src="{{ plot['image'] }}" class="img-fluid" alt="{{ name }} drawn with {{ plot['package'] }}" width="{{ plot['image-width'] }}" height="{{ plot['image-height'] }}" decoding="async"{% if not eager %} loading="lazy"{% endif %}>
                           </a>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
