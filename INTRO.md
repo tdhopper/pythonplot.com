@@ -1,6 +1,5 @@
 ## Introduction
-Plotting is an essential component of data analysis. As a data scientist,
-I spend a significant amount of my time making simple plots to understand complex data sets (exploratory data analysis) and help others understand them (presentations).
+As a data scientist, I spend much of my time making simple plots to understand complex data sets (exploratory data analysis) and help others understand them (presentations).
 
 In particular, I make a lot of bar charts (including histograms), line plots (including time series), scatter plots, and density plots from data in [Pandas data frames](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html "pandas.DataFrame documentation"). I often want to facet these on various categorical variables and layer them on a common grid.
 
@@ -36,34 +35,34 @@ JetBrains writes [Lets-Plot](https://lets-plot.org/ "Lets-Plot: multiplatform pl
 
 ### Further Reading
 
-Jake Vanderplas's PyCon 2017 talk [The Python Visualization Landscape](https://www.youtube.com/watch?v=FytuB8nFHPQ) still explains how these libraries relate to one another, as does Dan Saber's [A Dramatic Tour through Python's Data Visualization Landscape (including ggplot and Altair)](https://dsaber.com/2016/10/02/a-dramatic-tour-through-pythons-data-visualization-landscape-including-ggplot-and-altair/). Both predate several of the libraries here, but the family tree they draw holds.
+Jake Vanderplas's PyCon 2017 talk [The Python Visualization Landscape](https://www.youtube.com/watch?v=FytuB8nFHPQ) still explains how these libraries relate to one another, as does Dan Saber's [A Dramatic Tour through Python's Data Visualization Landscape (including ggplot and Altair)](https://dsaber.com/2016/10/02/a-dramatic-tour-through-pythons-data-visualization-landscape-including-ggplot-and-altair/), though both predate several of the libraries here.
 
 ### Hearty Thank You
 
-Much Python plotting development is done by open source developers who have an (almost) thankless task. I am extremely grateful for the countless hours of many who have helped me do my job. Please keep it up!
+Open source developers do most Python plotting development, an (almost) thankless job. I am grateful for the hours they have spent helping me do mine. Please keep it up!
 
 ### Why all the talk about ggplot?
 
-The word "ggplot" comes up a lot in discussions of plotting. Before I started using Python, I did most of my data analysis work in [R](https://cran.r-project.org/ "The Comprehensive R Archive Network"). I, with many Pythonistas, remain a big fan of Hadley Wickham's [ggplot2](http://ggplot2.org/ "ggplot2"), a "[grammar of graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448 "The Grammar of Graphics (Statistics and Computing): Leland Wilkinson, D. Wills, D. Rope, A. Norton, R. Dubbs: 9780387245447: Amazon.com: Books")" implementation in R, for exploratory data analysis.
+Before I started using Python, I did most of my data analysis work in [R](https://cran.r-project.org/ "The Comprehensive R Archive Network"). Like many Pythonistas, I remain a fan of Hadley Wickham's [ggplot2](https://ggplot2.tidyverse.org/ "ggplot2"), a "[grammar of graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448 "The Grammar of Graphics")" implementation in R, for exploratory data analysis.
 
-Like [scikit-learn](http://scikit-learn.org/ "scikit-learn: machine learning in Python") for machine learning in Python, ggplot2 provides a consistent API with sane defaults. The consistent interface makes it easier to iterate rapidly with low cognitive overhead. The sane defaults makes it easy to drop plots right into an email or presentation.
+Like [scikit-learn](http://scikit-learn.org/ "scikit-learn: machine learning in Python") for machine learning in Python, ggplot2 has a consistent API and sane defaults. The consistent interface lets me iterate without stopping to think. The sane defaults make it easy to drop plots right into an email or presentation.
 
-Particularly, ggplot2 allows the user to make basic plots (bar, histogram, line, scatter, density, violin) from data frames _with_ [faceting](http://ggplot2.tidyverse.org/reference/facet_grid.html) and [layering](https://rpubs.com/hadley/ggplot2-layers) by discrete values.
+ggplot2 makes basic plots (bar, histogram, line, scatter, density, violin) from data frames _with_ [faceting](http://ggplot2.tidyverse.org/reference/facet_grid.html) and [layering](https://rpubs.com/hadley/ggplot2-layers) by discrete values.
 
-An excellent introduction to the power of ggplot2 is in Hadley Wickham and Garrett Grolemund's book [R for Data Science](http://r4ds.had.co.nz/data-visualisation.html).
+Hadley Wickham and Garrett Grolemund's [R for Data Science](http://r4ds.had.co.nz/data-visualisation.html) teaches ggplot2 well.
 
 ### Humble Rosetta Stone for Visualization in Exploratory Data Analysis
 
-Below I have begun compiling a list of basic plots for exploratory data analysis. I have generated the plots with as many different libraries as time (and library) permits.
+Below is a list of basic plots for exploratory data analysis, each made with as many libraries as time (and library) permit.
 
-My hope is that this will (1) help you in your daily practice to work with what is available and (2) help inspire future development of Python plotting libraries.
+I hope it helps you work with what exists today and inspires what gets built next.
 
-Some rudimentary instructions on how you can contribute plots are [here](https://github.com/tdhopper/pythonplot.com#contributing). [General feedback or other plot suggestions](https://github.com/tdhopper/pythonplot.com/issues) are welcome.
+[Contributing instructions](https://github.com/tdhopper/pythonplot.com#contributing) are on GitHub. [General feedback or other plot suggestions](https://github.com/tdhopper/pythonplot.com/issues) are welcome.
 
 #### Data
 
-The datasets used below are included with ggplot2. One is the [Prices of 50,000 round cut diamonds](http://ggplot2.tidyverse.org/reference/diamonds.html) and the other is [Fuel economy data from 1999 and 2008 for 38 popular models of car](http://ggplot2.tidyverse.org/reference/mpg.html).
+ggplot2 ships the datasets used below: the [Prices of 50,000 round cut diamonds](http://ggplot2.tidyverse.org/reference/diamonds.html) and [Fuel economy data from 1999 and 2008 for 38 popular models of car](http://ggplot2.tidyverse.org/reference/mpg.html).
 
 The time series example is a random walk I generate with a quick Python script.
 
-Here's what a few rows of the datasets looks like:
+A few rows of each:
