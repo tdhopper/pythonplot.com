@@ -20,6 +20,8 @@ Many excellent plotting tools are built on top of Matplotlib.
 
 "[Seaborn](https://seaborn.pydata.org/ "Seaborn: statistical data visualization") is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics." Seaborn makes beautiful plots but is geared toward specific statistical plots, not general purpose plotting. It does have a powerful [faceting utility function](http://seaborn.pydata.org/tutorial/axis_grids.html) that I use regularly.
 
+Seaborn 0.12 added [seaborn.objects](https://seaborn.pydata.org/tutorial/objects_interface.html), a second interface built on the grammar of graphics. It composes a plot from marks and statistical transforms instead of dispatching to a named plotting function, so it covers far more of the examples below than the classic interface does. It has no loess smoother and no regression confidence band, so those two examples are missing.
+
 #### Interactive Plotting Libraries
 
 There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/pythonplot.com).
