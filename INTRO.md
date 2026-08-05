@@ -6,40 +6,37 @@ In particular, I make a lot of bar charts (including histograms), line plots (in
 
 ### Python Plotting Options
 
-Python plotting libraries are manifold. Most well known is Matplotlib.
+Python has many plotting libraries. Matplotlib is the best known, and several others build on it.
 
-"[Matplotlib](https://matplotlib.org/ "Matplotlib: Python plotting") is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms." Native Matplotlib is the cause of [frustration](https://stackoverflow.com/questions/tagged/matplotlib) to many data analysts due to the complex syntax. Much of that frustration would be alleviated if it were recognized as a library of lower level plotting primitives on which other tools can be built. (If you are frustrated by Matplotlib and haven't read [Effectively Using Matplotlib](http://pbpython.com/effective-matplotlib.html) by [Chris Moffitt](https://twitter.com/chris1610), go read it.)
+"[Matplotlib](https://matplotlib.org/ "Matplotlib: Visualization with Python") makes easy things easy and hard things possible." It hands you figures, axes, and drawing primitives. You assemble everything above that level yourself: faceting, stacking, density estimation, smoothing. That assembly is what sends analysts to [Stack Overflow](https://stackoverflow.com/questions/tagged/matplotlib).
+
+Put the Matplotlib and ggplot2 versions of the two-variable faceted scatter plot below side by side: eighteen lines of subplot bookkeeping against four lines of grammar. If Matplotlib annoys you and you haven't read [Effectively Using Matplotlib](http://pbpython.com/effective-matplotlib.html) by [Chris Moffitt](https://twitter.com/chris1610), go read it.
 
 #### Matplotlib-Based Libraries
 
-Many excellent plotting tools are built on top of Matplotlib.
+[Pandas plotting](https://pandas.pydata.org/docs/user_guide/visualization.html "pandas user guide: Chart Visualization") provides "the basics ... to easily create decent looking plots" from data frames. That is about 70% of what I do day-to-day. It has no faceting, no categorical color mapping, and no smoothing, so five of the examples below have no pandas column.
 
-[Pandas plots](https://pandas.pydata.org/pandas-docs/stable/visualization.html "pandas documentation") provides the "basics to easily create decent looking plots" from data frames. It provides about 70% of what I want to do day-to-day. Importantly, it lacks robust faceting capabilities.
+Seaborn calls itself "[statistical data visualization](https://seaborn.pydata.org/ "seaborn: statistical data visualization")." Its classic interface is a set of named functions (`histplot`, `scatterplot`, `countplot`, `lmplot`, `kdeplot`) plus [FacetGrid](http://seaborn.pydata.org/tutorial/axis_grids.html), which I use for faceting more than anything else in the library. It covers every plot below, once you know which function to reach for.
 
-"[plotnine](https://plotnine.readthedocs.io/en/stable/) is an implementation of a grammar of graphics in Python, it is based on ggplot2." plotnine is a attempt to directly translate ggplot2 to Python; despite some quirks and bugs, it works very well for a young product.
+Seaborn 0.12 added [seaborn.objects](https://seaborn.pydata.org/tutorial/objects_interface.html), a second interface built on the grammar of graphics. It composes a plot from marks and statistical transforms instead of dispatching to a named plotting function. The interface has no loess smoother and no regression confidence band, so those two examples are missing.
 
-"[Seaborn](https://seaborn.pydata.org/ "Seaborn: statistical data visualization") is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics." Seaborn makes beautiful plots but is geared toward specific statistical plots, not general purpose plotting. It does have a powerful [faceting utility function](http://seaborn.pydata.org/tutorial/axis_grids.html) that I use regularly.
-
-Seaborn 0.12 added [seaborn.objects](https://seaborn.pydata.org/tutorial/objects_interface.html), a second interface built on the grammar of graphics. It composes a plot from marks and statistical transforms instead of dispatching to a named plotting function, so it covers far more of the examples below than the classic interface does. It has no loess smoother and no regression confidence band, so those two examples are missing.
+"[plotnine](https://plotnine.org/) is a data visualization package for Python based on the grammar of graphics." It tracks ggplot2 closely enough that most R code translates line for line, down to the `+` for layering. I reach for it when I want ggplot2 semantics without leaving Python.
 
 #### Interactive Plotting Libraries
 
-There are several tools that can make the kinds of plots described here. At present, I have little experience with them. If anyone would like to help add examples, please [get in touch](https://github.com/tdhopper/pythonplot.com).
+These libraries draw in the browser. The examples here are static PNGs, so their tooltips, panning, and linked selection are gone.
 
-"[Altair](https://altair-viz.github.io/ "Declarative Visualization in Python") is a declarative statistical visualization library for Python, based on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics")." According to [Jake Vanderplas](https://speakerdeck.com/jakevdp/visualization-in-python-with-altair), "Declarative visualization lets you think about data and relationships, rather than incidental details." I provide Altair examples rendered as static images.
+"[Vega-Altair](https://altair-viz.github.io/ "Vega-Altair: Declarative Visualization in Python") is a declarative visualization library for Python," built on [Vega-Lite](https://vega.github.io/vega-lite/ "Vega-Lite: A High-Level Visualization Grammar for Interactive Graphics"). According to [Jake Vanderplas](https://speakerdeck.com/jakevdp/visualization-in-python-with-altair), "Declarative visualization lets you think about data and relationships, rather than incidental details." You describe the encoding and Altair chooses the marks, scales, and legend.
 
+"[plotly](https://plotly.com/python/ "Plotly Open Source Graphing Library for Python")'s Python graphing library makes interactive, publication-quality graphs." The examples here use [Plotly Express](https://plotly.com/python/plotly-express/), which the project calls "the recommended starting point for creating most common figures." Express covers most of these plots in one call; the regression and smoothing examples fall back to `graph_objects` and statsmodels.
 
-"[plotly](https://plot.ly/ "Plotly - Make charts and dashboards online")'s Python graphing library makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts." I provide plotly examples rendered as static images.
+JetBrains writes [Lets-Plot](https://lets-plot.org/ "Lets-Plot: multiplatform plotting library built on the principles of the Grammar of Graphics"), which it calls "a faithful port of R's ggplot2 to Python and Kotlin." The claim holds up: most of the examples below are the ggplot2 column with `lp.` prefixes. Like Altair, it renders to HTML in the notebook.
 
-"[Lets-Plot](https://lets-plot.org/ "Lets-Plot: an open-source plotting library for statistical data") is an open-source plotting library for statistical data," written by JetBrains and modeled on the grammar of graphics. Its Python API tracks ggplot2 closely enough that most of the examples below translate line for line. I provide Lets-Plot examples rendered as static images.
+"[Bokeh](https://docs.bokeh.org/en/latest/ "Bokeh documentation") is a Python library for creating interactive visualizations for modern web browsers." The Bokeh examples below go through [hvPlot](https://hvplot.holoviz.org/), which adds an `.hvplot` accessor to data frames. The accessor echoes the pandas `.plot` API, so most of these plots are one call plus a few keyword arguments. hvPlot has no regression line or loess smoother, so it is absent from those two examples.
 
-"[Bokeh](http://bokeh.pydata.org/en/latest/ "Python interactive visualization library") is a Python interactive visualization library that targets modern web browsers for presentation." The Bokeh examples below go through [hvPlot](https://hvplot.holoviz.org/), which adds an `.hvplot` accessor to data frames that deliberately echoes the pandas `.plot` API, so most of these plots are one call with a few keyword arguments. hvPlot has no regression line or loess smoother, so those two examples are missing. I provide hvPlot examples rendered as static images.
+### Further Reading
 
-"[bqplot](https://github.com/bloomberg/bqplot) is a Grammar of Graphics-based interactive plotting framework for the Jupyter notebook."
-
-### The Python Plotting Landscape
-
-If you're interested in the breadth of plotting tools available for Python, I commend Jake Vanderplas's Pycon 2017 talk called the [The Python Visualization Landscape](https://www.youtube.com/watch?v=FytuB8nFHPQ). Similarly, the blogpost [A Dramatic Tour through Python's Data Visualization Landscape (including ggplot and Altair)](https://dsaber.com/2016/10/02/a-dramatic-tour-through-pythons-data-visualization-landscape-including-ggplot-and-altair/) by Dan Saber is worth your time.
+Jake Vanderplas's PyCon 2017 talk [The Python Visualization Landscape](https://www.youtube.com/watch?v=FytuB8nFHPQ) still explains how these libraries relate to one another, as does Dan Saber's [A Dramatic Tour through Python's Data Visualization Landscape (including ggplot and Altair)](https://dsaber.com/2016/10/02/a-dramatic-tour-through-pythons-data-visualization-landscape-including-ggplot-and-altair/). Both predate several of the libraries here, but the family tree they draw holds.
 
 ### Hearty Thank You
 
