@@ -27,6 +27,27 @@ table {
     font-family: monospace;
 }
 
+/* Copy button sitting in the dark code panel header. */
+.copy-btn {
+    background: transparent;
+    border: 1px solid #4a4a4a;
+    border-radius: 3px;
+    color: #9a9a9a;
+    cursor: pointer;
+    font-size: .75rem;
+    line-height: 1.2;
+    min-width: 4.5rem;
+    padding: .15rem .5rem;
+    transition: color .15s ease, border-color .15s ease;
+}
+
+.copy-btn:hover,
+.copy-btn:focus {
+    border-color: #7a7a7a;
+    color: #e6e6e6;
+    outline: none;
+}
+
 @media (min-width: 1600px) {
   .container {
     width: 1440px;

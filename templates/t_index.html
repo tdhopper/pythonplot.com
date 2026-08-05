@@ -135,7 +135,10 @@
                           </a>
                         </div>
                         <div class="col-lg-6 col-xs-12 p-0 right-col d-inline-flex flex-column">
-                          <h6 class="text-muted mb-0 pb-0 pt-3 px-3">Code:</h6>
+                          <div class="code-head d-flex justify-content-between align-items-center pt-3 px-3">
+                            <h6 class="text-muted mb-0 pb-0">Code:</h6>
+                            <button type="button" class="copy-btn" data-copy aria-label="Copy code for {{ name }} with {{ plot['package'] }}">Copy</button>
+                          </div>
                           {% if plot['package'] == "ggplot" %}
                             <code class="p-0 mb-auto">{% highlight 'R' %}{{ plot['content'] }}{% endhighlight %}</code>
                           {% else %}
@@ -181,7 +184,30 @@
           event.preventDefault();
           $(this).ekkoLightbox({alwaysShowClose: true});
       });
-      $.bigfoot();
+    </script>
+
+    <script type="text/javascript">
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-copy]');
+        if (!button) { return; }
+        var panel = button.closest('.right-col');
+        var code = panel && panel.querySelector('code');
+        if (!code) { return; }
+        var text = code.textContent.replace(/\s+$/, '');
+        var done = function (label) {
+          button.textContent = label;
+          setTimeout(function () { button.textContent = 'Copy'; }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            done('Copied');
+          }, function () {
+            done('Press ⌘C');
+          });
+        } else {
+          done('Press ⌘C');
+        }
+      });
     </script>
   </body>
 </html>
