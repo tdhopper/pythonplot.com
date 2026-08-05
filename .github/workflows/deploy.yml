@@ -5,6 +5,10 @@ on:
     branches: ['**']
   pull_request:
     branches: [master]
+  schedule:
+    # Weekly build-health check; deploy steps only run on push events,
+    # so this catches library breakage without touching production.
+    - cron: '0 6 * * 1'
 
 jobs:
   build-and-deploy:
