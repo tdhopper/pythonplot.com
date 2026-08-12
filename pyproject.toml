@@ -17,7 +17,7 @@ dependencies = [
     # Plotting libraries
     "matplotlib>=3.7",
     "seaborn>=0.13",
-    "plotnine>=0.13",
+    "plotnine>=0.15.7",
     "lets-plot>=4.11",
     "plotly>=5.24",
     "altair>=5.0",
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.28",
+    "boto3>=1.43.67",
 
     # Testing
     "pytest>=7.4",
