@@ -8,7 +8,7 @@ requires-python = ">=3.11"
 dependencies = [
     # Core Jupyter/IPython
     "ipython>=8.12",
-    "notebook>=7.0",
+    "notebook>=7.6.2",
     "jupyter>=1.0",
 
     # Data manipulation
@@ -17,7 +17,7 @@ dependencies = [
     # Plotting libraries
     "matplotlib>=3.7",
     "seaborn>=0.13",
-    "plotnine>=0.15.7",
+    "plotnine>=0.15.8",
     "lets-plot>=4.11",
     "plotly>=5.24",
     "altair>=5.0",
@@ -27,10 +27,10 @@ dependencies = [
     # Image rendering
     "kaleido>=1.0",  # v1+ requires Chrome
     "pillow>=10.0",
-    "selenium>=4.11",  # Required for Bokeh PNG export
+    "selenium>=4.47.0",  # Required for Bokeh PNG export
 
     # Statistical tools
-    "statsmodels>=0.14",
+    "statsmodels>=0.14.6",
     "scikit-misc>=0.3",
 
     # R integration
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.67",
+    "boto3>=1.43.72",
 
     # Testing
     "pytest>=7.4",
