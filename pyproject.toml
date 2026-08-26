@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.72",
+    "boto3>=1.43.78",
 
     # Testing
     "pytest>=7.4",
