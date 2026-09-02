@@ -7,7 +7,7 @@ requires-python = ">=3.11"
 
 dependencies = [
     # Core Jupyter/IPython
-    "ipython>=8.12",
+    "ipython>=9.17.0",
     "notebook>=7.6.2",
     "jupyter>=1.0",
 
@@ -19,7 +19,7 @@ dependencies = [
     "seaborn>=0.13",
     "plotnine>=0.15.8",
     "lets-plot>=4.11",
-    "plotly>=5.24",
+    "plotly>=7.0.0",
     "altair>=5.0",
     "vl-convert-python>=1.0",  # Required for Altair PNG export
     "hvplot>=0.12",  # Bokeh via the pandas .hvplot accessor
@@ -27,10 +27,10 @@ dependencies = [
     # Image rendering
     "kaleido>=1.0",  # v1+ requires Chrome
     "pillow>=10.0",
-    "selenium>=4.47.0",  # Required for Bokeh PNG export
+    "selenium>=4.48.0",  # Required for Bokeh PNG export
 
     # Statistical tools
-    "statsmodels>=0.14.6",
+    "statsmodels>=0.15.0",
     "scikit-misc>=0.3",
 
     # R integration
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.78",
+    "boto3>=1.43.83",
 
     # Testing
     "pytest>=7.4",
