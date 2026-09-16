@@ -15,7 +15,7 @@ dependencies = [
     "pandas>=2.0",
 
     # Plotting libraries
-    "matplotlib>=3.7",
+    "matplotlib>=3.11.2",
     "seaborn>=0.13",
     "plotnine>=0.15.8",
     "lets-plot>=4.11",
@@ -27,7 +27,7 @@ dependencies = [
     # Image rendering
     "kaleido>=1.4.0",  # v1+ requires Chrome
     "pillow>=10.0",
-    "selenium>=4.48.0",  # Required for Bokeh PNG export
+    "selenium>=4.49.0",  # Required for Bokeh PNG export
 
     # Statistical tools
     "statsmodels>=0.15.0",
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.89",
+    "boto3>=1.43.93",
 
     # Testing
     "pytest>=7.4",
