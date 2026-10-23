@@ -26,7 +26,7 @@ dependencies = [
 
     # Image rendering
     "kaleido>=1.5.0",  # v1+ requires Chrome
-    "pillow>=10.0",
+    "pillow>=13.0.0",
     "selenium>=4.51.0",  # Required for Bokeh PNG export
 
     # Statistical tools
