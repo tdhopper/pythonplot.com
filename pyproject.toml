@@ -39,7 +39,7 @@ dependencies = [
     # Template rendering
     "jinja2>=3.1",
     "jinja2-highlight>=0.6",
-    "markdown>=3.11",
+    "markdown>=3.11.2",
 
     # Utilities
     "psutil>=5.9",
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.111",
+    "boto3>=1.43.115",
 
     # Testing
     "pytest>=7.4",
