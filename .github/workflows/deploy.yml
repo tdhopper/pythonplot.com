@@ -44,7 +44,11 @@ jobs:
         run: uv run pytest tests/ -v
 
       - name: Execute notebook
-        run: uv run jupyter nbconvert --to notebook --execute Examples.ipynb --output Examples.build.ipynb
+        run: |
+          # Make the current R shared libraries visible to the notebook kernel.
+          r_library_path="$(uv run python -m rpy2.situation LD_LIBRARY_PATH)"
+          export LD_LIBRARY_PATH="${r_library_path}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          uv run jupyter nbconvert --to notebook --execute Examples.ipynb --output Examples.build.ipynb
 
       - name: Render site
         run: uv run python render.py Examples.build.ipynb
