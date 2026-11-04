@@ -7,8 +7,8 @@ requires-python = ">=3.11"
 
 dependencies = [
     # Core Jupyter/IPython
-    "ipython>=9.17.1",
-    "notebook>=7.6.3",
+    "ipython>=9.18.0",
+    "notebook>=7.6.4",
     "jupyter>=1.0",
 
     # Data manipulation
@@ -27,7 +27,7 @@ dependencies = [
     # Image rendering
     "kaleido>=1.5.0",  # v1+ requires Chrome
     "pillow>=13.0.0",
-    "selenium>=4.51.0",  # Required for Bokeh PNG export
+    "selenium>=4.52.0",  # Required for Bokeh PNG export
 
     # Statistical tools
     "statsmodels>=0.15.0",
@@ -47,10 +47,10 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.118",
+    "boto3>=1.43.123",
 
     # Testing
-    "pytest>=7.4",
+    "pytest>=9.2.0",
 ]
 
 [dependency-groups]
