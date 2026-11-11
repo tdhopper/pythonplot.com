@@ -7,12 +7,12 @@ requires-python = ">=3.11"
 
 dependencies = [
     # Core Jupyter/IPython
-    "ipython>=9.18.0",
-    "notebook>=7.6.4",
+    "ipython>=9.18.1",
+    "notebook>=7.6.5",
     "jupyter>=1.0",
 
     # Data manipulation
-    "pandas>=3.1.0",
+    "pandas>=3.1.1",
 
     # Plotting libraries
     "matplotlib>=3.11.2",
@@ -39,7 +39,7 @@ dependencies = [
     # Template rendering
     "jinja2>=3.1",
     "jinja2-highlight>=0.6",
-    "markdown>=3.11.2",
+    "markdown>=3.11.3",
 
     # Utilities
     "psutil>=5.9",
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.123",
+    "boto3>=1.43.126",
 
     # Testing
     "pytest>=9.2.0",
