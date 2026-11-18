@@ -22,10 +22,10 @@ dependencies = [
     "plotly>=7.1.0",
     "altair>=6.3.0",
     "vl-convert-python>=1.0",  # Required for Altair PNG export
-    "hvplot>=0.12",  # Bokeh via the pandas .hvplot accessor
+    "hvplot>=0.13.0",  # Bokeh via the pandas .hvplot accessor
 
     # Image rendering
-    "kaleido>=1.5.0",  # v1+ requires Chrome
+    "kaleido>=1.5.1",  # v1+ requires Chrome
     "pillow>=13.0.0",
     "selenium>=4.52.0",  # Required for Bokeh PNG export
 
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.43.126",
+    "boto3>=1.44.3",
 
     # Testing
     "pytest>=9.2.0",
