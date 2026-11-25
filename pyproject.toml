@@ -25,9 +25,9 @@ dependencies = [
     "hvplot>=0.13.0",  # Bokeh via the pandas .hvplot accessor
 
     # Image rendering
-    "kaleido>=1.5.1",  # v1+ requires Chrome
+    "kaleido>=1.5.2",  # v1+ requires Chrome
     "pillow>=13.0.0",
-    "selenium>=4.52.0",  # Required for Bokeh PNG export
+    "selenium>=4.53.0",  # Required for Bokeh PNG export
 
     # Statistical tools
     "statsmodels>=0.15.0",
@@ -47,7 +47,7 @@ dependencies = [
     "simplegeneric>=0.8",
 
     # Cloud (if needed for deployment)
-    "boto3>=1.44.3",
+    "boto3>=1.44.9",
 
     # Testing
     "pytest>=9.2.0",
