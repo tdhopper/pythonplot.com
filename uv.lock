@@ -230,30 +230,30 @@ wheels = [
 
 [[package]]
 name = "boto3"
-version = "1.44.3"
+version = "1.44.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "botocore" },
     { name = "jmespath" },
     { name = "s3transfer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/58/f3/625dd5a18c17e703f10029e16ccd991802e784b27cc627045f16d60a5d4c/boto3-1.44.3.tar.gz", hash = "sha256:bba566b5cba78db05c5f6c44d219c8f6fb2cd2b923106f767289e4cd0b87b093", size = 112741, upload-time = "2026-11-13T20:16:51.884Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/24/43/993eec3594eab145ec751af0ef1dadbad0beb01b304b99d7ed0b68c31a71/boto3-1.44.9.tar.gz", hash = "sha256:da4199076833547445a7181e38e833f476808142df95084b2b46c8b2a107aa66", size = 112771, upload-time = "2026-11-21T01:33:36.737Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/b5/2807516d854b60f430917590fcfe470bc60c5383cd6b27dc57aa6dc6afea/boto3-1.44.3-py3-none-any.whl", hash = "sha256:8c9c4844c7ce184494b102983696d6cdb09f5307ec7f238ca4ad5849fb14e26b", size = 140155, upload-time = "2026-11-13T20:16:50.577Z" },
+    { url = "https://files.pythonhosted.org/packages/9e/66/73c8c57119a8acf3688dfbe95c4648e8b3e4d6a7a3783b0619b65d201f02/boto3-1.44.9-py3-none-any.whl", hash = "sha256:aff889e8ca6f6006f0b5658b712941471d21e4675d6d48421974a20a5a17a918", size = 140157, upload-time = "2026-11-21T01:33:34.542Z" },
 ]
 
 [[package]]
 name = "botocore"
-version = "1.44.5"
+version = "1.44.11"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jmespath" },
     { name = "python-dateutil" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/09/f4/ca9bcb9774e8d0a903b95743abb252c78d05d80faa97eb6ee7f9c7167e0b/botocore-1.44.5.tar.gz", hash = "sha256:a988f39e3a4484def0b8010f41128f71157da0515a4804fccce4739aa8f216da", size = 16859049, upload-time = "2026-11-17T20:24:18.73Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c3/d5/4adb74ed2633ac703e7574d8f48765a3ac7b0b3e38d82e5a24711af55c09/botocore-1.44.11.tar.gz", hash = "sha256:c889792a88e04cc9f0b6eebc742112e5edb2710fe932f4c9a3ba784f92f09d75", size = 17222107, upload-time = "2026-11-24T20:24:11.902Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/73/0b/9f5dad3e0acf5307f34e38fa9a3c3e93f3e4da51667a5939846015269587/botocore-1.44.5-py3-none-any.whl", hash = "sha256:8f16a56d1dff125dd65322ae021efa7ba5195a6db5102b96862566055b748921", size = 16555415, upload-time = "2026-11-17T20:24:14.604Z" },
+    { url = "https://files.pythonhosted.org/packages/9b/ad/f4e0e67eda1cfd402726abbc82da14a0d9129f3ff0795acbfadcc9060497/botocore-1.44.11-py3-none-any.whl", hash = "sha256:441c5ebbad9bb2911120d12bda448d4b55793fc52fc7425d9392ebb02f4814a4", size = 16920498, upload-time = "2026-11-24T20:24:07.15Z" },
 ]
 
 [[package]]
@@ -1208,16 +1208,16 @@ wheels = [
 
 [[package]]
 name = "kaleido"
-version = "1.5.1"
+version = "1.5.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "choreographer" },
     { name = "logistro" },
     { name = "packaging" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b3/eb/7702391704c68535d7ed0a30f6c560417a928282c5e6d9e7e8cf9e2ee319/kaleido-1.5.1.tar.gz", hash = "sha256:871b4dd87c716ec7fec414ac62d158575dbb98908ac9bc61faa27cb0dbdd8e72", size = 70953, upload-time = "2026-11-12T19:50:15.504Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/65/09/1355d65c03a9be73f6af76d13016b0615708f117d20f3ac2114ddc9353b8/kaleido-1.5.2.tar.gz", hash = "sha256:a1231ec1219783d7db2a58aeaccc4bee0783500fed0a5f1fe598fb54fbb67670", size = 69833, upload-time = "2026-11-18T22:00:29.508Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/56/38/16e51a14c4d4cb7a8339d258300eabd82714ad88990e64f88c06a1ffc85e/kaleido-1.5.1-py3-none-any.whl", hash = "sha256:0bd9b5d428362c1bd93ad09992271fb86af59e21b147da9c3691916423874aa0", size = 55840, upload-time = "2026-11-12T19:50:14.07Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/0b/33e6e63d23691c4561a8a60e14c458dffa350b72255350dfdd008d6d838a/kaleido-1.5.2-py3-none-any.whl", hash = "sha256:758ae0712881f3ecfa7bac10fdd4eff9597f6561d34b4802d6225191cca1bb17", size = 56288, upload-time = "2026-11-18T22:00:28.159Z" },
 ]
 
 [[package]]
@@ -2471,13 +2471,13 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "altair", specifier = ">=6.3.0" },
-    { name = "boto3", specifier = ">=1.44.3" },
+    { name = "boto3", specifier = ">=1.44.9" },
     { name = "hvplot", specifier = ">=0.13.0" },
     { name = "ipython", specifier = ">=9.18.1" },
     { name = "jinja2", specifier = ">=3.1" },
     { name = "jinja2-highlight", specifier = ">=0.6" },
     { name = "jupyter", specifier = ">=1.0" },
-    { name = "kaleido", specifier = ">=1.5.1" },
+    { name = "kaleido", specifier = ">=1.5.2" },
     { name = "lets-plot", specifier = ">=4.11" },
     { name = "markdown", specifier = ">=3.11.3" },
     { name = "matplotlib", specifier = ">=3.11.2" },
@@ -2491,7 +2491,7 @@ requires-dist = [
     { name = "rpy2", specifier = ">=3.6.9" },
     { name = "scikit-misc", specifier = ">=0.5.3" },
     { name = "seaborn", specifier = ">=0.13" },
-    { name = "selenium", specifier = ">=4.52.0" },
+    { name = "selenium", specifier = ">=4.53.0" },
     { name = "simplegeneric", specifier = ">=0.8" },
     { name = "statsmodels", specifier = ">=0.15.0" },
     { name = "tzlocal", specifier = ">=5.4.5" },
@@ -3081,7 +3081,7 @@ wheels = [
 
 [[package]]
 name = "selenium"
-version = "4.52.0"
+version = "4.53.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "certifi" },
@@ -3091,9 +3091,9 @@ dependencies = [
     { name = "urllib3", extra = ["socks"] },
     { name = "websocket-client" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/96/07/d9a9ca4bbcfaad6e07e8034ccd719ef42032ab25a421fb9171baad4ed734/selenium-4.52.0.tar.gz", hash = "sha256:40f423c598cc85390c403ef626c9d3457c1ae834d4cf1f38637ebba3cb6f0d7a", size = 1062139, upload-time = "2026-10-29T13:09:43.51Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1d/2c/bf42413d7965c0f84cf86bb04214081d268793fc5d1c38b72ddde9f9c57d/selenium-4.53.0.tar.gz", hash = "sha256:efb45b129cbd7f46da99c82e7d327978bda29ed987223465c341f96404a86a2c", size = 1091312, upload-time = "2026-11-17T17:51:29.409Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e6/37/c6d36e31c9d79ff97c5e77345be34f08f39942d9a36afe8b0fa2878344b2/selenium-4.52.0-py3-none-any.whl", hash = "sha256:caa2860d486f71cdeb21fee3248c2f604bba590120dfb4d3d18c4d7cf97c6f1f", size = 12076163, upload-time = "2026-10-29T13:09:41.294Z" },
+    { url = "https://files.pythonhosted.org/packages/dc/ba/dcca843695a4daddd30f746af3a168b7d718b712122249eb7dec4e03e5f8/selenium-4.53.0-py3-none-any.whl", hash = "sha256:f0906a56324f5dfb19b87971a7cfd2162ea473e5afa25ee458aaa5a3816b98ac", size = 12240652, upload-time = "2026-11-17T17:51:26.965Z" },
 ]
 
 [[package]]
